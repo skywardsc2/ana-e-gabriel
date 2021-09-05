@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export const IndexPageTemplate = ({
   image,
@@ -10,7 +11,10 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro
-}) => <h1> Hello </h1>
+}) => {
+  const finalImage = getImage(image.childImageSharp.gatsbyImageData)
+  return <GatsbyImage image={finalImage} alt='' />
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -57,9 +61,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
         heading
@@ -73,9 +75,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData
               }
             }
             text
