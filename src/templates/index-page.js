@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const IndexPageTemplate = ({
   image,
@@ -12,8 +12,7 @@ export const IndexPageTemplate = ({
   description,
   intro
 }) => {
-  const finalImage = getImage(image.childImageSharp.gatsbyImageData)
-  return <GatsbyImage image={finalImage} alt='' />
+  return <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt='' />
 }
 
 IndexPageTemplate.propTypes = {
