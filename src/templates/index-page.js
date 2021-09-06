@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Flex, Grid, Text } from '@chakra-ui/react'
-import Logo from '../../static/img/svg/Logo.inline.svg'
 import { graphql } from 'gatsby'
+import Helmet from 'gatsby-plugin-react-helmet'
+import HeroHeaderContainer from '../containers/hero-header/hero-header'
+import Logo from '../../static/img/svg/Logo.inline.svg'
 
 export const IndexPageTemplate = ({
   image,
@@ -15,45 +17,57 @@ export const IndexPageTemplate = ({
   intro
 }) => {
   return (
-    <Flex
-      justify={'center'}
-      width='100%'
-      backgroundColor='pink.100'
-      height='100vh'
-    >
+    <>
+      <Helmet>
+        <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
+      </Helmet>
       <Flex
-        justify='center'
-        align='center'
+        justify={'center'}
         width='100%'
-        height={['16']}
-        py='2'
-        backgroundColor='white'
+        backgroundColor='blue.50'
+        direction='column'
       >
-        <Grid
+        <Flex
+          justify='center'
+          align='center'
           width='100%'
-          maxWidth='1000px'
-          px={['4', '12']}
-          justifyContent='space-between'
-          autoFlow='column'
+          height={['16']}
+          py='2'
+          backgroundColor='white'
+          pos='fixed'
+          top='0'
+          zIndex='10'
         >
-          <Logo width='100px' height='95%' />
-          <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
-            <Flex justify='center' align='center'>
-              <Text>Item</Text>
-            </Flex>
-            <Flex justify='center' align='center'>
-              <Text>Item</Text>
-            </Flex>
-            <Flex justify='center' align='center'>
-              <Text>Item</Text>
-            </Flex>
-            <Flex justify='center' align='center'>
-              <Text>Item</Text>
-            </Flex>
+          <Grid
+            width='100%'
+            maxWidth='1000px'
+            px={['4', '12']}
+            justifyContent='space-between'
+            autoFlow='column'
+          >
+            <Logo width='100px' height='95%' />
+            <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
+              <Flex justify='center' align='center'>
+                <Text>Item</Text>
+              </Flex>
+              <Flex justify='center' align='center'>
+                <Text>Item</Text>
+              </Flex>
+              <Flex justify='center' align='center'>
+                <Text>Item</Text>
+              </Flex>
+              <Flex justify='center' align='center'>
+                <Text>Item</Text>
+              </Flex>
+            </Grid>
           </Grid>
-        </Grid>
+        </Flex>
+        <HeroHeaderContainer
+          title={'Ana & Gabriel'}
+          image={image}
+        ></HeroHeaderContainer>
       </Flex>
-    </Flex>
+    </>
   )
 }
 
@@ -94,6 +108,7 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
+// export default IndexPageTemplate
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
