@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Button, Flex } from "@chakra-ui/react"
 
 export const IndexPageTemplate = ({
   image,
@@ -13,9 +14,15 @@ export const IndexPageTemplate = ({
   intro
 }) => {
   return (
-    <div>
-      <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt='' />
-    </div>
+    <Flex justify={"center"} width='100%'>
+      <Flex
+        justify='center'
+        align='center'
+        width='100%'
+        height={["18"]}
+        backgroundColor='white'
+      ></Flex>
+    </Flex>
   )
 }
 
