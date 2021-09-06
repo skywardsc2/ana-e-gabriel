@@ -1,8 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { Flex, Grid, Text } from "@chakra-ui/react"
-import Logo from "../../static/img/svg/Logo.inline.svg"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { Flex, Grid, Text } from '@chakra-ui/react'
+import Logo from '../../static/img/svg/Logo.inline.svg'
+import { graphql } from 'gatsby'
 
 export const IndexPageTemplate = ({
   image,
@@ -15,7 +16,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <Flex
-      justify={"center"}
+      justify={'center'}
       width='100%'
       backgroundColor='pink.100'
       height='100vh'
@@ -24,14 +25,14 @@ export const IndexPageTemplate = ({
         justify='center'
         align='center'
         width='100%'
-        height={["16"]}
+        height={['16']}
         py='2'
         backgroundColor='white'
       >
         <Grid
           width='100%'
           maxWidth='1000px'
-          px={["4", "12"]}
+          px={['4', '12']}
           justifyContent='space-between'
           autoFlow='column'
         >

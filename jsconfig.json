@@ -3,6 +3,5 @@
     "module": "commonJS",
     "target": "es6"
   },
-  "include": ["src/templates"],
   "exclude": ["node_modules", "public"]
 }

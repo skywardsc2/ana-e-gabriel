@@ -7,69 +7,73 @@ const netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    title: 'Gatsby + Netlify CMS Starter',
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution."
+      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.'
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: "@chakra-ui/gatsby-plugin",
-      options: {
-        /**
-         * @property {boolean} [resetCSS=true]
-         * if false, this plugin will not use `<CSSReset />
-         */
-        resetCSS: true,
-        /**
-         * @property {boolean} [isUsingColorMode=true]
-         * if false, this plugin will not use <ColorModeProvider />
-         */
-        isUsingColorMode: true
-      }
-    },
+    'gatsby-plugin-react-helmet',
+    '@chakra-ui/gatsby-plugin',
+    // {
+    //   resolve: '@chakra-ui/gatsby-plugin',
+    //   options: {
+    //     /**
+    //      * @property {boolean} [resetCSS=true]
+    //      * if `false`, this plugin will not use `<CSSReset />
+    //      */
+    //     resetCSS: true,
+    //     /**
+    //      * @property {number} [portalZIndex=40]
+    //      * The z-index to apply to all portal nodes. This is useful
+    //      * if your app uses a lot z-index to position elements.
+    //      */
+    //     portalZIndex: 40,
+    //     useSystemColorMode: false,
+    //     initialColorMode: 'light'
+    //   }
+    // },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
-        name: "uploads"
+        name: 'uploads'
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
+        name: 'pages'
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: "images"
+        name: 'images'
       }
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /\.inline\.svg$/
         }
       }
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           netlifyCmsPaths,
           {
-            resolve: "gatsby-remark-relative-images"
+            resolve: 'gatsby-remark-relative-images'
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -78,9 +82,9 @@ module.exports = {
             }
           },
           {
-            resolve: "gatsby-remark-copy-linked-files",
+            resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: "static"
+              destinationDir: 'static'
             }
           }
         ]
@@ -89,12 +93,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
     `gatsby-plugin-image`,
-    "gatsby-plugin-netlify" // make sure to keep it last in the array
+    'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
 }
