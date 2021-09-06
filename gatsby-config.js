@@ -66,8 +66,7 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 2048,
-              linkImagesToOriginal: false
+              maxWidth: 2048
             }
           },
           {
@@ -79,12 +78,15 @@ module.exports = {
         ]
       }
     },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
+    `gatsby-plugin-image`,
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 }

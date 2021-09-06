@@ -12,7 +12,11 @@ export const IndexPageTemplate = ({
   description,
   intro
 }) => {
-  return <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt='' />
+  return (
+    <div>
+      <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt='' />
+    </div>
+  )
 }
 
 IndexPageTemplate.propTypes = {
