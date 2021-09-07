@@ -19,12 +19,15 @@ collections:
         label: 'Home'
         name: 'index'
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'index-page'
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
+          - label: 'Template Key'
+            name: 'templateKey'
+            widget: 'hidden'
+            default: 'index-page'
+          - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'Heading', name: 'heading', widget: 'string' }
+          - label: 'Bem-vindos'
+            name: 'welcomeContainerContent'
+            widget: 'object'
+            fields:
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Texto', name: 'text', widget: 'string' }

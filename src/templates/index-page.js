@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Flex, Grid, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { graphql } from 'gatsby'
-// @ts-ignore
-import Helmet from 'gatsby-plugin-react-helmet'
 import HeroHeaderContainer from '../containers/hero-header/hero-header'
 import TopbarContainer from '../containers/topbar/topbar'
-import Logo from '../img/svg/Logo.inline.svg'
-import { HamburgerIcon } from '@chakra-ui/icons'
 import DateCountdownContainer from '../containers/date-countdown/date-countdown.container'
+import WelcomeContainer from '../containers/welcome/welcome.container'
 
-export const IndexPageTemplate = ({ image, title, heading }) => {
+export const IndexPageTemplate = ({
+  image,
+  heading,
+  welcomeContainerContent
+}) => {
   return (
     <>
       {/* <Helmet>
@@ -24,6 +24,10 @@ export const IndexPageTemplate = ({ image, title, heading }) => {
           image={image}
         ></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
+        <WelcomeContainer
+          title={welcomeContainerContent.heading}
+          text={welcomeContainerContent.text}
+        ></WelcomeContainer>
       </Flex>
     </>
   )
@@ -32,7 +36,11 @@ export const IndexPageTemplate = ({ image, title, heading }) => {
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  welcomeContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    text: PropTypes.string
+  })
 }
 
 const IndexPage = ({ data }) => {
@@ -41,8 +49,8 @@ const IndexPage = ({ data }) => {
   return (
     <IndexPageTemplate
       image={frontmatter.image}
-      title={frontmatter.title}
       heading={frontmatter.heading}
+      welcomeContainerContent={frontmatter.welcomeContainerContent}
     />
   )
 }
@@ -62,13 +70,16 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
         image {
           childImageSharp {
             gatsbyImageData
           }
         }
         heading
+        welcomeContainerContent {
+          heading
+          text
+        }
       }
     }
   }
