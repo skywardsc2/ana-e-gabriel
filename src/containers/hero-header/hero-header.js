@@ -4,7 +4,7 @@ import React from 'react'
 
 const HeroHeaderContainer = ({ title, image }) => {
   return (
-    <Flex justify='center' align='center' width='100%' marginTop={'16'}>
+    <Flex justify='center' align='center' width='100%' marginTop={'10'}>
       <Grid
         pos='relative'
         justifyContent='center'
@@ -18,7 +18,7 @@ const HeroHeaderContainer = ({ title, image }) => {
           top='50%'
           left='50%'
           transform='translate(-50%, -50%)'
-          fontSize={['5xl', '7xl', '9xl']}
+          fontSize={['5xl', '5xl', '9xl', '9xl']}
           fontWeight={'400'}
           color='yellow.50'
           zIndex='1'
@@ -26,8 +26,8 @@ const HeroHeaderContainer = ({ title, image }) => {
           {title}
         </Heading>
         <Flex
-          width={['800px', '100%']}
-          height={['50vh', '100vh']}
+          width={['800px', '800px', '1200px', '100%']}
+          height={['50vh', '50vh', '90vh', '90vh']}
           transform={['none', 'none']}
         >
           <GatsbyImage
