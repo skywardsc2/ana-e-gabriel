@@ -35,11 +35,13 @@ const DateCountdownContainer = () => {
       justifyItems='center'
       alignContent='center'
       width='100%'
-      my='8'
+      templateColumns='1fr'
+      my={['8', '20']}
       px='2'
       rowGap='8'
+      overflowX='hidden'
     >
-      <Box pos='relative' overflow='hidden'>
+      <Box pos='relative'>
         <StaticImage
           src='../../img/splashes/Date.png'
           alt=''
@@ -50,7 +52,7 @@ const DateCountdownContainer = () => {
           pos='absolute'
           top='50%'
           left='50%'
-          width='100%'
+          // width='100%'
           textAlign='center'
           transform='translate(-50%, -50%)'
           fontFamily='Rawengulk'
@@ -62,7 +64,7 @@ const DateCountdownContainer = () => {
       </Box>
       <Heading
         as='h2'
-        width='100%'
+        width='100vw'
         textAlign='center'
         fontFamily='Rawengulk'
         fontWeight='normal'
