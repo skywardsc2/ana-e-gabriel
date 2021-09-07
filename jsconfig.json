@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonJS",
-    "target": "es6",
-    "jsx": "react"
+    "module": "commonjs",
+    "target": "es2020",
+    "jsx": "preserve",
+    "checkJs": true,
+    "strictFunctionTypes": true
   },
-  "exclude": ["node_modules", "public"]
+  "exclude": ["node_modules", "**/node_modules/*"]
 }
