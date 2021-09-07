@@ -6,26 +6,20 @@ import { graphql } from 'gatsby'
 import Helmet from 'gatsby-plugin-react-helmet'
 import HeroHeaderContainer from '../containers/hero-header/hero-header'
 import Logo from '../../static/img/svg/Logo.inline.svg'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro
-}) => {
+export const IndexPageTemplate = ({ image, title, heading }) => {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
-      </Helmet>
+      </Helmet> */}
       <Flex
         justify={'center'}
-        width='100%'
+        width='100vw'
         backgroundColor='blue.50'
         direction='column'
+        paddingTop='4'
       >
         <Flex
           justify='center'
@@ -46,20 +40,9 @@ export const IndexPageTemplate = ({
             autoFlow='column'
           >
             <Logo width='100px' height='95%' />
-            <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
-              <Flex justify='center' align='center'>
-                <Text>Item</Text>
-              </Flex>
-              <Flex justify='center' align='center'>
-                <Text>Item</Text>
-              </Flex>
-              <Flex justify='center' align='center'>
-                <Text>Item</Text>
-              </Flex>
-              <Flex justify='center' align='center'>
-                <Text>Item</Text>
-              </Flex>
-            </Grid>
+            <HamburgerIcon width='50px' height='50px' />
+            {/* <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
+            </Grid> */}
           </Grid>
         </Flex>
         <HeroHeaderContainer
@@ -74,13 +57,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+  heading: PropTypes.string
 }
 
 const IndexPage = ({ data }) => {
@@ -91,10 +68,6 @@ const IndexPage = ({ data }) => {
       image={frontmatter.image}
       title={frontmatter.title}
       heading={frontmatter.heading}
-      subheading={frontmatter.subheading}
-      mainpitch={frontmatter.mainpitch}
-      description={frontmatter.description}
-      intro={frontmatter.intro}
     />
   )
 }
@@ -121,24 +94,6 @@ export const pageQuery = graphql`
           }
         }
         heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }
