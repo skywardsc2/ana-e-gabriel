@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Flex, Grid, Text } from '@chakra-ui/react'
 import { graphql } from 'gatsby'
+// @ts-ignore
 import Helmet from 'gatsby-plugin-react-helmet'
 import HeroHeaderContainer from '../containers/hero-header/hero-header'
-import Logo from '../../static/img/svg/Logo.inline.svg'
+import TopbarContainer from '../containers/topbar/topbar'
+import Logo from '../img/svg/Logo.inline.svg'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import DateCountdownContainer from '../containers/date-countdown/date-countdown.container'
 
 export const IndexPageTemplate = ({ image, title, heading }) => {
   return (
@@ -14,42 +17,13 @@ export const IndexPageTemplate = ({ image, title, heading }) => {
       {/* <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
       </Helmet> */}
-      <Flex
-        justify={'center'}
-        width='100vw'
-        backgroundColor='blue.50'
-        direction='column'
-        paddingTop='4'
-      >
-        <Flex
-          justify='center'
-          align='center'
-          width='100%'
-          height={['16']}
-          py='2'
-          backgroundColor='white'
-          pos='fixed'
-          top='0'
-          zIndex='10'
-        >
-          <Grid
-            width='100%'
-            maxWidth='1000px'
-            px={['4', '12']}
-            justifyContent='space-between'
-            alignItems='center'
-            autoFlow='column'
-          >
-            <Logo width='80px' height='95%' />
-            <HamburgerIcon width='32px' height='38px' color='secondary' />
-            {/* <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
-            </Grid> */}
-          </Grid>
-        </Flex>
+      <TopbarContainer></TopbarContainer>
+      <Flex justify={'center'} width='100vw' direction='column' paddingTop='4'>
         <HeroHeaderContainer
           title={'Ana & Gabriel'}
           image={image}
         ></HeroHeaderContainer>
+        <DateCountdownContainer></DateCountdownContainer>
       </Flex>
     </>
   )
