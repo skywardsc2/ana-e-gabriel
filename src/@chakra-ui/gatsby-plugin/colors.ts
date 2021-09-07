@@ -1,9 +1,8 @@
 const colors = {
-  mainBrand: 'blue.100',
-  lightAccent: '#ffbb54',
-  darkAccent: '#1c714a',
-  lightShade: '#a7f1cc',
-  darkShade: '#201916'
+  primary: '#8BB6D6',
+  secondary: '#DAB47C',
+  darkShade: '#374F60',
+  lightShade: '#E9F3FA'
 }
 
 export default colors

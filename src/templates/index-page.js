@@ -37,10 +37,11 @@ export const IndexPageTemplate = ({ image, title, heading }) => {
             maxWidth='1000px'
             px={['4', '12']}
             justifyContent='space-between'
+            alignItems='center'
             autoFlow='column'
           >
-            <Logo width='100px' height='95%' />
-            <HamburgerIcon width='50px' height='50px' />
+            <Logo width='80px' height='95%' />
+            <HamburgerIcon width='32px' height='38px' color='secondary' />
             {/* <Grid justifyContent='flex-end' gap='2' autoFlow='column'>
             </Grid> */}
           </Grid>
