@@ -9,15 +9,13 @@ import styles from './styles'
 import fonts from './typography'
 
 // Component style overrides
-import Button from './components/button'
+import components from './components'
 
 const overrides = {
   colors,
   styles,
   fonts,
-  components: {
-    Button
-  },
+  components,
   config: {
     useSystemColorMode: false,
     initialColorMode: 'light'
