@@ -1,15 +1,15 @@
 const styles = {
   global: {
-    "*": {
-      "::-webkit-scrollbar": {
-        width: "0.5rem"
+    '*': {
+      '::-webkit-scrollbar': {
+        width: '0.5rem'
       },
-      "::-webkit-scrollbar-track": {
-        boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.3)"
+      '::-webkit-scrollbar-track': {
+        boxShadow: 'none'
       },
-      "::-webkit-scrollbar-thumb": {
-        backgroundColor: "mainBrand",
-        borderRadius: "2px"
+      '::-webkit-scrollbar-thumb': {
+        backgroundColor: 'primary',
+        borderRadius: '20px'
       }
     }
   }
