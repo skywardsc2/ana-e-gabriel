@@ -42,11 +42,13 @@ const DateCountdownContainer = () => {
       overflowX='hidden'
     >
       <Box pos='relative'>
-        <StaticImage
-          src='../../img/splashes/Date.png'
-          alt=''
-          style={{ width: '768px' }}
-        />
+        <Box width={['600px', '700px']}>
+          <StaticImage
+            src='../../img/splashes/Date.png'
+            alt=''
+            style={{ width: '100%' }}
+          />
+        </Box>
         <Heading
           as='h2'
           pos='absolute'
