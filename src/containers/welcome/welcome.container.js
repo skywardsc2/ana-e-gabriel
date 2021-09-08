@@ -11,7 +11,14 @@ const WelcomeContainer = ({ title, text }) => {
         <Box pos='relative' top='25%'>
           <StaticImage src={'../../img/splashes/Bem-Vindos.png'} alt='' />
         </Box>
-        <Heading as='h2' fontSize={['5xl', '6xl', '8xl']} fontWeight='500'>
+        <Heading
+          as='h2'
+          fontSize={{
+            base: '6xl',
+            md: '8xl'
+          }}
+          fontWeight='500'
+        >
           {title}
         </Heading>
         <Text width='100%' px='8'>
