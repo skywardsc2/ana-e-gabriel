@@ -6,21 +6,24 @@ import HeroHeaderContainer from '../containers/hero-header/hero-header'
 import TopbarContainer from '../containers/topbar/topbar'
 import DateCountdownContainer from '../containers/date-countdown/date-countdown.container'
 import WelcomeContainer from '../containers/welcome/welcome.container'
+import { Helmet } from 'react-helmet'
+import OurStoryContainer from '../containers/our-story/our-story.container'
 
 export const IndexPageTemplate = ({
   image,
   heading,
-  welcomeContainerContent
+  welcomeContainerContent,
+  ourStoryContainerContent
 }) => {
   return (
     <>
-      {/* <Helmet>
+      <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
-      </Helmet> */}
+      </Helmet>
       <TopbarContainer></TopbarContainer>
       <Flex justify={'center'} width='100vw' direction='column' paddingTop='4'>
         <HeroHeaderContainer
-          title={'Ana & Gabriel'}
+          title={heading}
           image={image}
         ></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
@@ -28,6 +31,10 @@ export const IndexPageTemplate = ({
           title={welcomeContainerContent.heading}
           text={welcomeContainerContent.text}
         ></WelcomeContainer>
+        <OurStoryContainer
+          title={ourStoryContainerContent.heading}
+          text={ourStoryContainerContent.text}
+        ></OurStoryContainer>
       </Flex>
     </>
   )
@@ -35,9 +42,12 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
   heading: PropTypes.string,
   welcomeContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    text: PropTypes.string
+  }),
+  ourStoryContainerContent: PropTypes.shape({
     heading: PropTypes.string,
     text: PropTypes.string
   })
@@ -51,6 +61,7 @@ const IndexPage = ({ data }) => {
       image={frontmatter.image}
       heading={frontmatter.heading}
       welcomeContainerContent={frontmatter.welcomeContainerContent}
+      ourStoryContainerContent={frontmatter.ourStoryContainerContent}
     />
   )
 }
@@ -77,6 +88,10 @@ export const pageQuery = graphql`
         }
         heading
         welcomeContainerContent {
+          heading
+          text
+        }
+        ourStoryContainerContent {
           heading
           text
         }

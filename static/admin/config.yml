@@ -8,6 +8,8 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -27,6 +29,12 @@ collections:
           - { label: 'Heading', name: 'heading', widget: 'string' }
           - label: 'Bem-vindos'
             name: 'welcomeContainerContent'
+            widget: 'object'
+            fields:
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Texto', name: 'text', widget: 'string' }
+          - label: 'Bem-vindos'
+            name: 'ourStoryContainerContent'
             widget: 'object'
             fields:
               - { label: 'Heading', name: 'heading', widget: 'string' }
