@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Text } from '@chakra-ui/react'
+import { Box, Grid, Heading } from '@chakra-ui/react'
 import { StaticImage } from 'gatsby-plugin-image'
 import React, { useEffect, useState } from 'react'
 
@@ -43,11 +43,7 @@ const DateCountdownContainer = () => {
     >
       <Box pos='relative'>
         <Box width={['600px', '700px']}>
-          <StaticImage
-            src='../../img/splashes/Date.png'
-            alt=''
-            style={{ width: '100%' }}
-          />
+          <StaticImage src='../../img/splashes/Date.png' alt='' />
         </Box>
         <Heading
           as='h2'

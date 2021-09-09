@@ -25,7 +25,7 @@ const OurStoryContainer = ({ title, text }) => {
         rowGap='8'
         columnGap='8'
       >
-        <Box pos='relative' gridArea='title' width='100%'>
+        <Box pos='relative' gridArea='title' width='100%' marginTop='8'>
           <Heading
             width='100% '
             as='h2'
