@@ -8,12 +8,17 @@ import DateCountdownContainer from '../containers/date-countdown/date-countdown.
 import WelcomeContainer from '../containers/welcome/welcome.container'
 import { Helmet } from 'react-helmet'
 import OurStoryContainer from '../containers/our-story/our-story.container'
+import AddressContainer from '../containers/address/address.container'
 
-export const IndexPageTemplate = ({
-  image,
+const IndexPageTemplate = ({
   heading,
   welcomeContainerContent,
-  ourStoryContainerContent
+  ourStoryContainerContent,
+  addressContainerContent,
+  informationContainerContent,
+  giftsContainerContent,
+  galleryContainerContent,
+  confirmationContainerContent
 }) => {
   return (
     <>
@@ -21,11 +26,14 @@ export const IndexPageTemplate = ({
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
       </Helmet>
       <TopbarContainer></TopbarContainer>
-      <Flex justify={'center'} width='100vw' direction='column' paddingTop='4'>
-        <HeroHeaderContainer
-          title={heading}
-          image={image}
-        ></HeroHeaderContainer>
+      <Flex
+        justify={'center'}
+        width='100%'
+        direction='column'
+        paddingTop='4'
+        overflowX='hidden'
+      >
+        <HeroHeaderContainer title={heading}></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
         <WelcomeContainer
           title={welcomeContainerContent.heading}
@@ -35,19 +43,54 @@ export const IndexPageTemplate = ({
           title={ourStoryContainerContent.heading}
           text={ourStoryContainerContent.text}
         ></OurStoryContainer>
+        <AddressContainer
+          title={addressContainerContent.heading}
+          text={addressContainerContent.text}
+        ></AddressContainer>
       </Flex>
     </>
   )
 }
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
   welcomeContainerContent: PropTypes.shape({
     heading: PropTypes.string,
     text: PropTypes.string
   }),
   ourStoryContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    text: PropTypes.string
+  }),
+  addressContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    text: PropTypes.string
+  }),
+  informationContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    text: PropTypes.string
+  }),
+  giftsContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    categories: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        cards: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string,
+            price: PropTypes.number
+          })
+        )
+      })
+    )
+  }),
+  galleryContainerContent: PropTypes.shape({
+    heading: PropTypes.string,
+    photos: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    )
+  }),
+  confirmationContainerContent: PropTypes.shape({
     heading: PropTypes.string,
     text: PropTypes.string
   })
@@ -58,10 +101,14 @@ const IndexPage = ({ data }) => {
 
   return (
     <IndexPageTemplate
-      image={frontmatter.image}
       heading={frontmatter.heading}
       welcomeContainerContent={frontmatter.welcomeContainerContent}
       ourStoryContainerContent={frontmatter.ourStoryContainerContent}
+      addressContainerContent={frontmatter.addressContainerContent}
+      informationContainerContent={frontmatter.informationContainerContent}
+      giftsContainerContent={frontmatter.giftsContainerContent}
+      galleryContainerContent={frontmatter.galleryContainerContent}
+      confirmationContainerContent={frontmatter.confirmationContainerContent}
     />
   )
 }
@@ -81,17 +128,45 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
         heading
         welcomeContainerContent {
           heading
           text
         }
         ourStoryContainerContent {
+          heading
+          text
+        }
+        addressContainerContent {
+          heading
+          text
+        }
+        informationContainerContent {
+          heading
+          cards {
+            title
+            text
+          }
+        }
+        giftsContainerContent {
+          heading
+          categories {
+            title
+            cards {
+              title
+              price
+            }
+          }
+        }
+        galleryContainerContent {
+          heading
+          photos {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        confirmationContainerContent {
           heading
           text
         }
