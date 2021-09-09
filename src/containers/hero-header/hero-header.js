@@ -1,8 +1,8 @@
-import { Box, Flex, Grid, Heading } from '@chakra-ui/react'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { Flex, Grid, Heading } from '@chakra-ui/react'
+import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const HeroHeaderContainer = ({ title, image }) => {
+const HeroHeaderContainer = ({ title }) => {
   return (
     <Flex justify='center' align='center' width='100%' marginTop={'10'}>
       <Grid
@@ -17,26 +17,15 @@ const HeroHeaderContainer = ({ title, image }) => {
           height={['50vh', '50vh', '90vh', '90vh']}
           transform={['none', 'none']}
         >
-          <GatsbyImage
-            image={image.childImageSharp.gatsbyImageData}
+          <StaticImage
+            src='../../img/photos/watercolor-cover.png'
             alt=''
             style={{ width: '100%', height: '100%' }}
             imgStyle={{
               objectFit: 'contain'
             }}
           />
-          {/* <Box
-            pos='absolute'
-            width='50%'
-            height='50%'
-            top='50%'
-            left='50%'
-            transform='translate(-50%, -50%)'
-            bgGradient='radial(rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0) 80%)'
-            zIndex='3'
-          ></Box> */}
         </Flex>
-
         <Heading
           as='h1'
           width='fit-content'
@@ -45,7 +34,6 @@ const HeroHeaderContainer = ({ title, image }) => {
           left='50%'
           transform='translate(-50%, -50%)'
           fontSize={['7xl', '7xl', '9xl', '9xl']}
-          // size='4xl'
           fontWeight={'400'}
           color='yellow.50'
           zIndex='5'
