@@ -1,5 +1,5 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
-import { Box, Flex, Grid, Heading } from '@chakra-ui/react'
+import { Flex, Grid } from '@chakra-ui/react'
 import React from 'react'
 
 import Logo from '../../img/svg/Logo.inline.svg'

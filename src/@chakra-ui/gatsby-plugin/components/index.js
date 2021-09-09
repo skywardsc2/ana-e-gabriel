@@ -1,7 +1,9 @@
 // import Heading from './heading'
 // import Button from './button'
 
-export default {
+const components = {
   //   Heading
   // Button
 }
+
+export default components
