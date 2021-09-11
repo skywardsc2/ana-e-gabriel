@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet'
 import OurStoryContainer from '../containers/our-story/our-story.container'
 import AddressContainer from '../containers/address/address.container'
 import InformationContainer from '../containers/information/information.container'
+import GiftsContainer from '../containers/gifts/gifts.container'
 
 const IndexPageTemplate = ({
   heading,
@@ -49,6 +50,7 @@ const IndexPageTemplate = ({
           text={addressContainerContent.text}
         ></AddressContainer>
         <InformationContainer></InformationContainer>
+        <GiftsContainer></GiftsContainer>
       </Flex>
     </>
   )

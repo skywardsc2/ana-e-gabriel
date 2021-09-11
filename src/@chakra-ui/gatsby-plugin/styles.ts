@@ -2,8 +2,8 @@ const styles = {
   global: {
     '*': {
       '::-webkit-scrollbar': {
-        height: '0.5rem',
-        width: '0.5rem'
+        height: '1',
+        width: '1'
       },
       '::-webkit-scrollbar-track': {
         boxShadow: 'none'
@@ -21,7 +21,7 @@ const styles = {
       marginBottom: '2'
     },
     ul: {
-      'list-style-position': 'inside'
+      listStylePosition: 'inside'
     }
   }
 }

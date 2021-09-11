@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { Box, Flex, Grid, Text } from '@chakra-ui/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useState } from 'react'
@@ -48,17 +48,26 @@ const InformationCardComponent = ({ imageData, title, textHTML, ...props }) => {
           <Text
             width='100%'
             dangerouslySetInnerHTML={{ __html: textHTML }}
-            ver
           ></Text>
         </Grid>
         <Flex width='100%' justify='center'>
-          <ChevronDownIcon
-            width='35px'
-            height='35px'
-            color='secondary'
-            cursor='pointer'
-            onClick={() => toggleExpanded()}
-          />
+          {isExpanded ? (
+            <ChevronUpIcon
+              width='35px'
+              height='35px'
+              color='secondary'
+              cursor='pointer'
+              onClick={() => toggleExpanded()}
+            />
+          ) : (
+            <ChevronDownIcon
+              width='35px'
+              height='35px'
+              color='secondary'
+              cursor='pointer'
+              onClick={() => toggleExpanded()}
+            />
+          )}
         </Flex>
       </Grid>
     </CardComponent>

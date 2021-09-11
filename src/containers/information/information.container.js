@@ -97,6 +97,7 @@ const InformationContainer = () => {
             md: '8xl'
           }}
           fontWeight='500'
+          lineHeight='0.8'
           width='100%'
           textAlign='center'
         >
@@ -108,7 +109,7 @@ const InformationContainer = () => {
           alignItems='flex-start'
           width='100%'
           gap='2'
-          marginLeft={{ base: '2', md: 0 }}
+          marginLeft={{ base: '2', md: '0' }}
           overflowX='auto'
           p={{ base: '4', lg: '10' }}
           css={{ '&::-webkit-scrollbar': { display: 'none' } }}

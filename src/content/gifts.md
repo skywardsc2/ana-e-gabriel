@@ -1,5 +1,5 @@
 ---
-  heading: Presentes
+  title: Presentes
   categories:
     - title: Cotas de Lua de Mel
       cards:

@@ -1,9 +1,9 @@
 // import Heading from './heading'
-// import Button from './button'
+import Button from './button'
 
 const components = {
   //   Heading
-  // Button
+  Button
 }
 
 export default components
