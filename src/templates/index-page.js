@@ -9,6 +9,7 @@ import WelcomeContainer from '../containers/welcome/welcome.container'
 import { Helmet } from 'react-helmet'
 import OurStoryContainer from '../containers/our-story/our-story.container'
 import AddressContainer from '../containers/address/address.container'
+import InformationContainer from '../containers/information/information.container'
 
 const IndexPageTemplate = ({
   heading,
@@ -31,7 +32,7 @@ const IndexPageTemplate = ({
         width='100%'
         direction='column'
         paddingTop='4'
-        overflowX='hidden'
+        overflow='hidden'
       >
         <HeroHeaderContainer title={heading}></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
@@ -47,6 +48,7 @@ const IndexPageTemplate = ({
           title={addressContainerContent.heading}
           text={addressContainerContent.text}
         ></AddressContainer>
+        <InformationContainer></InformationContainer>
       </Flex>
     </>
   )
@@ -160,11 +162,6 @@ export const pageQuery = graphql`
         }
         galleryContainerContent {
           heading
-          photos {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
         }
         confirmationContainerContent {
           heading
