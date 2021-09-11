@@ -1,6 +1,6 @@
-const _ = require("lodash")
-const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
+const _ = require('lodash')
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 // const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.createPages = ({ actions, graphql }) => {
@@ -8,7 +8,9 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/src/pages/.*/" } }
+      ) {
         edges {
           node {
             id

@@ -1,10 +1,21 @@
 import { Grid, Box, Heading, Text } from '@chakra-ui/layout'
+import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 // import watercolorSplash from '../../img/splashes/Bem-vindos.png'
 
 const OurStoryContainer = ({ title, text }) => {
+  const data = useStaticQuery(graphql`
+    {
+      markdownRemark(fields: { slug: { eq: "/our-story/" } }) {
+        frontmatter {
+          title
+        }
+        html
+      }
+    }
+  `)
   return (
     <Grid justifyContent='center' width='100%' my={['8', '20']} px='2'>
       <Grid
@@ -37,7 +48,7 @@ const OurStoryContainer = ({ title, text }) => {
             fontWeight='500'
             zIndex='5'
           >
-            {title}
+            {data.markdownRemark.frontmatter.title}
           </Heading>
           <Box
             pos='absolute'
@@ -49,9 +60,12 @@ const OurStoryContainer = ({ title, text }) => {
             <StaticImage src={'../../img/splashes/HistoriaTitle.png'} alt='' />
           </Box>
         </Box>
-        <Text width='100%' px={['8', '16', 'none']} gridArea='text'>
-          {text}
-        </Text>
+        <Text
+          width='100%'
+          px={['8', '16', 'none']}
+          gridArea='text'
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        ></Text>
         <Box
           width='100%'
           height={{

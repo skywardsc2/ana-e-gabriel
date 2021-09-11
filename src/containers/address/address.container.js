@@ -1,9 +1,22 @@
 import { Grid, Box, Heading, Text } from '@chakra-ui/layout'
 import { Flex } from '@chakra-ui/react'
+import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 const AddressContainer = ({ title, text }) => {
+  const data = useStaticQuery(graphql`
+    {
+      markdownRemark(fields: { slug: { eq: "/address/" } }) {
+        frontmatter {
+          title
+          text
+        }
+        html
+      }
+    }
+  `)
+
   return (
     <Flex
       pos='relative'
@@ -31,7 +44,7 @@ const AddressContainer = ({ title, text }) => {
             fontWeight='500'
             zIndex='5'
           >
-            {title}
+            {data.markdownRemark.frontmatter.title}
           </Heading>
           <Box
             pos='absolute'
@@ -47,8 +60,8 @@ const AddressContainer = ({ title, text }) => {
             />
           </Box>
         </Box>
-        <Text width='100%' px='8' zIndex='9'>
-          {text}
+        <Text width='100%' px='8' zIndex='9' textAlign='center'>
+          {data.markdownRemark.frontmatter.text}
         </Text>
         <Box
           pos='relative'
@@ -77,6 +90,7 @@ const AddressContainer = ({ title, text }) => {
         >
           <Box width='100%'>
             <iframe
+              title='Mapa do Local'
               src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.376895560173!2d-38.48649508517955!3d-12.818904490956184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716127f775ea43d%3A0xaf4123a1e1e549f5!2sCasar%C3%A3o%20do%20Alto!5e0!3m2!1spt-BR!2sbr!4v1631224523866!5m2!1spt-BR!2sbr'
               width='100%'
               height='350px'
@@ -85,8 +99,14 @@ const AddressContainer = ({ title, text }) => {
               loading='lazy'
             ></iframe>
           </Box>
-          <Flex width='100%' height='100%' align={'center'}>
-            <Text width='100%'>{text}</Text>
+          <Flex
+            width='100%'
+            height='100%'
+            direction='column'
+            justify='center'
+            dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+          >
+            {/* <Text width='100%'>{text}</Text> */}
           </Flex>
         </Grid>
       </Grid>
