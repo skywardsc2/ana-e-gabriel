@@ -7,10 +7,12 @@ const netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Ana & Gabriel',
-    description: 'Esperamos você em nosso casamento!',
-    'og:title': 'Ana & Gabriel',
-    'og:description': 'Esperamos você em nosso casamento!'
+    title: 'Casamento Ana e Gabriel',
+    description:
+      'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!',
+    'og:title': 'Casamento Ana e Gabriel',
+    'og:description':
+      'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

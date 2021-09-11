@@ -9,8 +9,6 @@ const InformationCardComponent = ({ imageData, title, textHTML, ...props }) => {
 
   const image = getImage(imageData)
 
-  console.log(image)
-
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded)
   }

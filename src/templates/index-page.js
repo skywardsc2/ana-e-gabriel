@@ -11,6 +11,9 @@ import OurStoryContainer from '../containers/our-story/our-story.container'
 import AddressContainer from '../containers/address/address.container'
 import InformationContainer from '../containers/information/information.container'
 import GiftsContainer from '../containers/gifts/gifts.container'
+import PhotoGalleryContainer from '../containers/photo-gallery/photo-gallery.container'
+import ConfirmationContainer from '../containers/confirmation/confirmation.container'
+import FooterContainer from '../containers/footer/footer.container'
 
 const IndexPageTemplate = ({
   heading,
@@ -51,6 +54,9 @@ const IndexPageTemplate = ({
         ></AddressContainer>
         <InformationContainer></InformationContainer>
         <GiftsContainer></GiftsContainer>
+        <PhotoGalleryContainer></PhotoGalleryContainer>
+        <ConfirmationContainer></ConfirmationContainer>
+        <FooterContainer></FooterContainer>
       </Flex>
     </>
   )
