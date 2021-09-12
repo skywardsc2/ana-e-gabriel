@@ -25,12 +25,42 @@ const IndexPageTemplate = ({
   galleryContainerContent,
   confirmationContainerContent
 }) => {
+  const topBarMenuItems = [
+    {
+      containerId: 'home',
+      text: 'Home'
+    },
+    {
+      containerId: 'home',
+      text: 'Nossa História'
+    },
+    {
+      containerId: 'home',
+      text: 'Endereço'
+    },
+    {
+      containerId: 'home',
+      text: 'Informações e Dicas'
+    },
+    {
+      containerId: 'home',
+      text: 'Presentes'
+    },
+    {
+      containerId: 'home',
+      text: 'Fotos'
+    },
+    {
+      containerId: 'home',
+      text: 'Presença'
+    }
+  ]
   return (
     <>
       <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
       </Helmet>
-      <TopbarContainer></TopbarContainer>
+      <TopbarContainer menuItems={topBarMenuItems}></TopbarContainer>
       <Flex
         justify={'center'}
         width='100%'
