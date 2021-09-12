@@ -2,7 +2,7 @@ const styles = {
   global: {
     '*': {
       '::-webkit-scrollbar': {
-        height: '1',
+        height: '2',
         width: '1'
       },
       '::-webkit-scrollbar-track': {

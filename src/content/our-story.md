@@ -2,14 +2,12 @@
 title: Nossa História
 ---
 
-Adipisicing reprehenderit duis reprehenderit deserunt officia amet ea exercitation adipisicing sit culpa enim veniam eu. Irure excepteur proident ut tempor commodo exercitation nisi incididunt exercitation pariatur. Occaecat tempor occaecat ut eiusmod dolor sunt nisi aliquip incididunt.
+E, de repente, a campanhia do novo apartamento de Ana Carolina tocou, naquele dia 21 de junho de 2018, dia em que ela recebia seus amigos para o seu “open house” de festa junina: era Gabriel, de penetra, a convite de amigos em comum, trazendo em uma mão uma caixa de cerveja e na outra um conjunto de xícaras de café para presentear Ana (não podia chegar de penetra e mãos abanando, né?).
 <br>
 <br>
 
-Ut incididunt quis eiusmod laborum. Deserunt fugiat aliqua mollit voluptate consequat eu velit commodo ad commodo et ad duis. Id sit magna Lorem ad dolore reprehenderit ea id duis exercitation excepteur non mollit. Enim irure exercitation cillum irure velit labore non. Laboris ut ipsum sint officia eu cupidatat nostrud elit. Culpa magna ipsum ad ullamco laboris. Qui in id ad duis enim est esse quis cupidatat qui.
+E foi assim, com vinho quente, vodka com energético, Alceu tocando ao fundo, e uma carteira “esquecida” naquela festa junina, que começou essa história de amor e risadas.
 <br>
 <br>
 
-Duis adipisicing qui consectetur amet id. Veniam pariatur ea pariatur qui culpa anim. Sunt voluptate laboris sint do officia culpa minim irure ea sunt velit cillum ex id.
-<br>
-<br>
+Anos depois, após reunirem o jogo de jantar que havia sido separado naquele 21 de junho (não é que as xícaras presenteadas eram parte do próprio jogo que Gabriel resolveu aproveitar?), Ana, Gabriel e Zion formam uma família que é rodeada de amor, e seguem construindo e compartilhando momentos de alegria e companheirismo.

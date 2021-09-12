@@ -45,6 +45,12 @@ const InformationContainer = ({ containerProps }) => {
     }
   `)
 
+  const sortedCards = data.cards.nodes.sort((a, b) =>
+    a.frontmatter.title
+      .toString()
+      .localeCompare(b.frontmatter.title.toString(), 'en', { numeric: true })
+  )
+
   return (
     <ScrollGrid
       pos='relative'
@@ -107,7 +113,11 @@ const InformationContainer = ({ containerProps }) => {
         </Heading>
         <Grid
           autoFlow={{ base: 'column', lg: 'row' }}
-          autoColumns={{ base: 'minmax(260px, 1fr)', lg: '600px' }}
+          autoColumns={{
+            base: 'minmax(280px, 1fr)',
+            md: 'minmax(450px, 1fr)',
+            lg: '800px'
+          }}
           alignItems='flex-start'
           width='100%'
           gap='2'
@@ -115,8 +125,9 @@ const InformationContainer = ({ containerProps }) => {
           overflowX='auto'
           p={{ base: '4', lg: '10' }}
           css={{ '&::-webkit-scrollbar': { display: 'none' } }}
+          pos='relative'
         >
-          {data.cards.nodes.map((card) => {
+          {sortedCards.map((card) => {
             return (
               <InformationCardComponent
                 key={card.fields.slug}

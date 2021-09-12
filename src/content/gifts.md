@@ -1,16 +1,10 @@
 ---
-  title: Presentes
-  categories:
-    - title: Cotas de Lua de Mel
-      cards:
-        - title: Viagem a Paris
-          price: 359.90
-        - title: Estadia no Resort
-          price: 169.90
-    - title: Presentes para o Lar
-      cards:
-        - title: Kit Tupperware
-          price: 39.90
-        - title: Liquidificador
-          price: 89.90
+title: Presentes
+version: '01'
+key: '38982751831'
+name: 'Gabriel C G Roldao'
+city: 'SAO PAULO'
+transactionId: 'CASAMENTOANAEGA'
+message: ''
+cep: '05004000'
 ---

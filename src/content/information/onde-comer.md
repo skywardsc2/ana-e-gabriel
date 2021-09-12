@@ -1,6 +1,6 @@
 ---
 title: Onde comer
-image: /img/moqueca.jpg
+image: /img/almoco.jpg
 ---
 
 - **[@restauranteamado](https://www.instagram.com/restauranteamado/)**

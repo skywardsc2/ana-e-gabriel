@@ -55,10 +55,16 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
 
   const { title, ...pixData } = data.container.frontmatter
 
+  const sortedCards = data.cards.nodes.sort((a, b) =>
+    a.frontmatter.title
+      .toString()
+      .localeCompare(b.frontmatter.title.toString(), 'en', { numeric: true })
+  )
+
   const cardRows = []
-  const maxCardsPerRow = 5
-  for (let i = 0, j = data.cards.nodes.length; i < j; i += maxCardsPerRow) {
-    cardRows.push(data.cards.nodes.slice(i, i + maxCardsPerRow))
+  const maxCardsPerRow = 9
+  for (let i = 0, j = sortedCards.length; i < j; i += maxCardsPerRow) {
+    cardRows.push(sortedCards.slice(i, i + maxCardsPerRow))
   }
 
   const getCardRow = (cards) => {
@@ -183,6 +189,7 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
             width='100%'
             boxShadow='lg'
             p={{ base: '4', lg: '4' }}
+            paddingRight={{ base: '0', lg: '4' }}
             backgroundColor='orange.50'
           >
             <Grid width='100%' overflowY='auto' gap='4' alignItems='start'>
