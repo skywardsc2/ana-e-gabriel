@@ -10,23 +10,50 @@ const ScrollElement = Scroll.ScrollElement
 const ScrollGrid = ScrollElement(Grid)
 
 const PhotoGalleryContainer = ({ containerProps }) => {
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     container: markdownRemark(
+  //       fileAbsolutePath: { regex: "/ana-e-gabriel/src/content/photos.*/" }
+  //     ) {
+  //       fields {
+  //         slug
+  //       }
+  //       frontmatter {
+  //         title
+  //         photos {
+  //           childImageSharp {
+  //             thumb: gatsbyImageData(
+  //               width: 350
+  //               height: 350
+  //               placeholder: BLURRED
+  //             )
+  //             full: gatsbyImageData(layout: FULL_WIDTH)
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
   const data = useStaticQuery(graphql`
     {
-      container: markdownRemark(
-        fileAbsolutePath: {
-          regex: "/ana-e-gabriel/src/content/photo-gallery.*/"
+      container: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/ana-e-gabriel/src/content/photos.*/" }
         }
       ) {
-        frontmatter {
-          title
-          photos {
-            childImageSharp {
-              thumb: gatsbyImageData(
-                width: 350
-                height: 350
-                placeholder: BLURRED
-              )
-              full: gatsbyImageData(layout: FULL_WIDTH)
+        nodes {
+          frontmatter {
+            title
+            photos {
+              childImageSharp {
+                thumb: gatsbyImageData(
+                  width: 350
+                  height: 350
+                  placeholder: BLURRED
+                )
+                full: gatsbyImageData(layout: FULL_WIDTH)
+              }
             }
           }
         }
@@ -41,7 +68,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
   //   )
   // }, [])
 
-  const photos = data.container.frontmatter.photos
+  const photos = data.container.nodes[0].frontmatter.photos
     .filter((photo) => !!photo)
     .map((photo) => {
       return photo.childImageSharp
@@ -105,7 +132,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
           width='100%'
           textAlign='center'
         >
-          {data.container.frontmatter.title}
+          {data.container.nodes[0].frontmatter.title}
         </Heading>
         <Box width={{ base: '100%' }} px={{ base: '4', md: '8', lg: '0' }}>
           <Gallery images={photos} colWidth={100 / 2} mdColWidth={100 / 3} />

@@ -138,8 +138,8 @@ IndexPage.propTypes = {
   })
 }
 
-export default IndexPage
-// export default IndexPageTemplate
+// export default IndexPage
+export default IndexPageTemplate
 
 export const pageQuery = graphql`
   query IndexPageTemplate {

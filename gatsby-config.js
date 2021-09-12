@@ -10,8 +10,8 @@ module.exports = {
     title: 'Casamento Ana e Gabriel',
     description:
       'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!',
-    'og:title': 'Casamento Ana e Gabriel',
-    'og:description':
+    ogTitle: 'Casamento Ana e Gabriel',
+    ogDescription:
       'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!'
   },
   plugins: [
