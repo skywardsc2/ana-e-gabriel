@@ -3,6 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import Gallery from '@browniebroke/gatsby-image-gallery'
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollGrid = ScrollElement(Grid)
 
 const PhotoGalleryContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
@@ -43,7 +48,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
     })
 
   return (
-    <Grid
+    <ScrollGrid
       pos='relative'
       justifyContent='center'
       width='100%'
@@ -106,7 +111,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
           <Gallery images={photos} colWidth={100 / 2} mdColWidth={100 / 3} />
         </Box>
       </Grid>
-    </Grid>
+    </ScrollGrid>
   )
 }
 

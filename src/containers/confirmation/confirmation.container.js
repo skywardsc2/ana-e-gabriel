@@ -3,6 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Button } from '@chakra-ui/button'
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollGrid = ScrollElement(Grid)
 
 const ConfirmationContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +30,7 @@ const ConfirmationContainer = ({ containerProps }) => {
   }
 
   return (
-    <Grid
+    <ScrollGrid
       pos='relative'
       justifyContent='center'
       alignItems='center'
@@ -90,7 +95,7 @@ const ConfirmationContainer = ({ containerProps }) => {
           Confirmar Presença
         </Button>
       </Grid>
-    </Grid>
+    </ScrollGrid>
   )
 }
 

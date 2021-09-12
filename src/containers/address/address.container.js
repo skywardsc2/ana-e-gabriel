@@ -3,6 +3,11 @@ import { Flex } from '@chakra-ui/react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollFlex = ScrollElement(Flex)
 
 const AddressContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
@@ -18,7 +23,7 @@ const AddressContainer = ({ containerProps }) => {
   `)
 
   return (
-    <Flex
+    <ScrollFlex
       pos='relative'
       justify='center'
       align='center'
@@ -111,7 +116,7 @@ const AddressContainer = ({ containerProps }) => {
           </Flex>
         </Grid>
       </Grid>
-    </Flex>
+    </ScrollFlex>
   )
 }
 

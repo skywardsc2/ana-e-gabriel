@@ -1,10 +1,15 @@
 import { Flex, Grid, Heading } from '@chakra-ui/react'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollFlex = ScrollElement(Flex)
 
 const HeroHeaderContainer = ({ containerProps }) => {
   return (
-    <Flex
+    <ScrollFlex
       justify='center'
       align='center'
       width='100%'
@@ -47,7 +52,7 @@ const HeroHeaderContainer = ({ containerProps }) => {
           {'Ana & Gabriel'}
         </Heading>
       </Grid>
-    </Flex>
+    </ScrollFlex>
   )
 }
 

@@ -2,8 +2,11 @@ import { Grid, Box, Heading, Text } from '@chakra-ui/layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import Scroll from 'react-scroll'
 
-// import watercolorSplash from '../../img/splashes/Bem-vindos.png'
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollGrid = ScrollElement(Grid)
 
 const OurStoryContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +20,7 @@ const OurStoryContainer = ({ containerProps }) => {
     }
   `)
   return (
-    <Grid
+    <ScrollGrid
       justifyContent='center'
       width='100%'
       my={['8', '20']}
@@ -91,7 +94,7 @@ const OurStoryContainer = ({ containerProps }) => {
           />
         </Box>
       </Grid>
-    </Grid>
+    </ScrollGrid>
   )
 }
 

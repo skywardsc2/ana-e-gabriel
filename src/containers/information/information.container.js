@@ -3,6 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import InformationCardComponent from '../../components/information-card/information-card.component'
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollGrid = ScrollElement(Grid)
 
 const InformationContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
@@ -40,10 +45,8 @@ const InformationContainer = ({ containerProps }) => {
     }
   `)
 
-  // console.log(data.cards.edges[0].node.image)
-
   return (
-    <Grid
+    <ScrollGrid
       pos='relative'
       justifyContent='center'
       width='100%'
@@ -128,7 +131,7 @@ const InformationContainer = ({ containerProps }) => {
           })}
         </Grid>
       </Grid>
-    </Grid>
+    </ScrollGrid>
   )
 }
 

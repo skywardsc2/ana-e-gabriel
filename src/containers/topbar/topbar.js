@@ -1,10 +1,12 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Flex, Grid } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import Scroll from 'react-scroll'
 import NavMenuComponent from '../../components/nav-menu/nav-menu.component'
-
 // @ts-ignore
 import Logo from '../../img/svg/Logo.inline.svg'
+
+const scroller = Scroll.scroller
 
 const TopbarContainer = ({ menuItems }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false)
@@ -48,7 +50,7 @@ const TopbarContainer = ({ menuItems }) => {
           autoFlow='column'
           display={{ base: 'none', lg: 'grid' }}
         >
-          {Object.values(menuItems).map((item, index) => {
+          {Object.keys(menuItems).map((key, index) => {
             return (
               <Flex
                 key={index}
@@ -65,8 +67,15 @@ const TopbarContainer = ({ menuItems }) => {
                   borderBottom: '4px solid',
                   borderColor: 'primary'
                 }}
+                onClick={() =>
+                  scroller.scrollTo(key, {
+                    duration: 500,
+                    smooth: true,
+                    offset: -80
+                  })
+                }
               >
-                {item.text}
+                {menuItems[key].text}
               </Flex>
             )
           })}

@@ -6,6 +6,12 @@ import React from 'react'
 import CardComponent from '../../components/card/card.component'
 import GiftCardComponent from '../../components/gift-card/gift-card.component'
 
+import Scroll from 'react-scroll'
+
+const ScrollElement = Scroll.ScrollElement
+
+const ScrollFlex = ScrollElement(Flex)
+
 const GiftsContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
@@ -91,7 +97,7 @@ const GiftsContainer = ({ containerProps }) => {
   }
 
   return (
-    <Flex
+    <ScrollFlex
       justify='center'
       align='center'
       width='100%'
@@ -180,7 +186,7 @@ const GiftsContainer = ({ containerProps }) => {
           </CardComponent>
         </Grid>
       </Grid>
-    </Flex>
+    </ScrollFlex>
   )
 }
 

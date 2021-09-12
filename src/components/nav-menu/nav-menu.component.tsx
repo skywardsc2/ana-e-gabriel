@@ -1,5 +1,8 @@
 import { Flex, Grid } from '@chakra-ui/layout'
 import React from 'react'
+import Scroll from 'react-scroll'
+
+const scroller = Scroll.scroller
 
 const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
   return (
@@ -11,7 +14,7 @@ const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
       backgroundColor='white'
       {...gridProps}
     >
-      {Object.values(menuItems).map((item, index) => {
+      {Object.keys(menuItems).map((key, index) => {
         return (
           <Flex
             key={index}
@@ -21,14 +24,20 @@ const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
             borderColor='secondary'
             paddingRight='4px'
             cursor='pointer'
-            onClick={() => item.elementRef?.current.scrollIntoView()}
+            onClick={() =>
+              scroller.scrollTo(key, {
+                duration: 500,
+                smooth: true,
+                offset: -80
+              })
+            }
             _active={{
               paddingRight: '0',
               borderRight: '4px',
               borderColor: 'primary'
             }}
           >
-            {item.text}
+            {menuItems[key].text}
           </Flex>
         )
       })}

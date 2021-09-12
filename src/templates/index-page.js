@@ -69,27 +69,25 @@ const IndexPageTemplate = ({
         overflow='hidden'
       >
         <HeroHeaderContainer
-          containerProps={{ ref: topBarMenuItems['hero-header'].elementRef }}
+          containerProps={{ name: 'hero-header' }}
         ></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
         <WelcomeContainer></WelcomeContainer>
         <OurStoryContainer
-          containerProps={{ ref: topBarMenuItems['our-story'].elementRef }}
+          containerProps={{ name: 'our-story' }}
         ></OurStoryContainer>
         <AddressContainer
-          containerProps={{ ref: topBarMenuItems['address'].elementRef }}
+          containerProps={{ name: 'address' }}
         ></AddressContainer>
         <InformationContainer
-          containerProps={{ ref: topBarMenuItems['information'].elementRef }}
+          containerProps={{ name: 'information' }}
         ></InformationContainer>
-        <GiftsContainer
-          containerProps={{ ref: topBarMenuItems['gifts'].elementRef }}
-        ></GiftsContainer>
+        <GiftsContainer containerProps={{ name: 'gifts' }}></GiftsContainer>
         <PhotoGalleryContainer
-          containerProps={{ ref: topBarMenuItems['photo-gallery'].elementRef }}
+          containerProps={{ name: 'photo-gallery' }}
         ></PhotoGalleryContainer>
         <ConfirmationContainer
-          containerProps={{ ref: topBarMenuItems['confirmation'].elementRef }}
+          containerProps={{ name: 'confirmation' }}
         ></ConfirmationContainer>
         <FooterContainer></FooterContainer>
       </Flex>
