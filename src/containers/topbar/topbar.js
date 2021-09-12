@@ -19,6 +19,7 @@ const TopbarContainer = ({ menuItems }) => {
   return (
     <Flex
       align='center'
+      justify='center'
       direction='column'
       width='100%'
       height={['16']}
@@ -84,7 +85,17 @@ const TopbarContainer = ({ menuItems }) => {
       <NavMenuComponent
         isVisible={isMenuVisible}
         menuItems={menuItems}
-        gridProps={{ alignSelf: 'flex-end', zIndex: '9' }}
+        gridProps={{
+          position: 'absolute',
+          right: '0',
+          bottom: '0',
+          transform: 'translate(0, 100%)',
+          alignSelf: 'flex-end',
+          zIndex: '9',
+          borderColor: 'secondary',
+          borderLeft: '1px solid',
+          borderBottom: '1px solid'
+        }}
       />
     </Flex>
   )

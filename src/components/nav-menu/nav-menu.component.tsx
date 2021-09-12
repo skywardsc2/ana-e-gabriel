@@ -8,7 +8,7 @@ const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
   return (
     <Grid
       display={isVisible ? 'grid' : 'none'}
-      width='100px'
+      width='120px'
       height={'auto'}
       templateColumns='1fr'
       backgroundColor='white'
@@ -19,9 +19,8 @@ const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
           <Flex
             key={index}
             p='4'
-            width='100px'
+            width='100%'
             height='100%'
-            borderColor='secondary'
             paddingRight='4px'
             cursor='pointer'
             onClick={() =>
