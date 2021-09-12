@@ -4,9 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import InformationCardComponent from '../../components/information-card/information-card.component'
 
-// import watercolorSplash from '../../img/splashes/Bem-vindos.png'
-
-const InformationContainer = () => {
+const InformationContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       container: markdownRemark(fields: { slug: { eq: "/information/" } }) {
@@ -52,6 +50,7 @@ const InformationContainer = () => {
       marginBottom={['8', '20']}
       py={{ base: '4', lg: '10' }}
       overflowX='hidden'
+      {...containerProps}
     >
       <Box
         pos='absolute'

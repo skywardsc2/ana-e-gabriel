@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const AddressContainer = ({ title, text }) => {
+const AddressContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       markdownRemark(fields: { slug: { eq: "/address/" } }) {
@@ -24,6 +24,7 @@ const AddressContainer = ({ title, text }) => {
       align='center'
       width='100%'
       my={['12', '20']}
+      {...containerProps}
     >
       <Grid
         justifyContent='center'

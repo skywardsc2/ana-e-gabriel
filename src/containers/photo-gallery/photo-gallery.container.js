@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 
-const PhotoGalleryContainer = () => {
+const PhotoGalleryContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       container: markdownRemark(
@@ -50,6 +50,7 @@ const PhotoGalleryContainer = () => {
       marginBottom={['8', '20']}
       py={{ base: '4', lg: '10' }}
       overflowX='hidden'
+      {...containerProps}
     >
       <Box
         pos='absolute'

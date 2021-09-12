@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-// import watercolorSplash from '../../img/splashes/Bem-vindos.png'
-
-const WelcomeContainer = ({ title, text }) => {
+const WelcomeContainer = () => {
   const data = useStaticQuery(graphql`
     {
       markdownRemark(fields: { slug: { eq: "/welcome/" } }) {

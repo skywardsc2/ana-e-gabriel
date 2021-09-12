@@ -48,9 +48,10 @@ const TopbarContainer = ({ menuItems }) => {
           autoFlow='column'
           display={{ base: 'none', lg: 'grid' }}
         >
-          {menuItems.map((item) => {
+          {Object.values(menuItems).map((item, index) => {
             return (
               <Flex
+                key={index}
                 justify='center'
                 align='center'
                 textAlign='center'

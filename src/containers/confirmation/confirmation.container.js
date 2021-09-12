@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Button } from '@chakra-ui/button'
 
-const ConfirmationContainer = () => {
+const ConfirmationContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       container: markdownRemark(
@@ -32,6 +32,7 @@ const ConfirmationContainer = () => {
       width='100%'
       height={{ base: '60vh', lg: '80vh' }}
       py={{ base: '4', lg: '10' }}
+      {...containerProps}
     >
       <Box
         pos='absolute'

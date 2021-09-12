@@ -11,14 +11,17 @@ const NavMenuComponent = ({ menuItems, isVisible, gridProps }) => {
       backgroundColor='white'
       {...gridProps}
     >
-      {menuItems.map((item) => {
+      {Object.values(menuItems).map((item, index) => {
         return (
           <Flex
+            key={index}
             p='4'
             width='100px'
             height='100%'
             borderColor='secondary'
             paddingRight='4px'
+            cursor='pointer'
+            onClick={() => item.elementRef?.current.scrollIntoView()}
             _active={{
               paddingRight: '0',
               borderRight: '4px',

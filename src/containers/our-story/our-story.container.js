@@ -5,7 +5,7 @@ import React from 'react'
 
 // import watercolorSplash from '../../img/splashes/Bem-vindos.png'
 
-const OurStoryContainer = ({ title, text }) => {
+const OurStoryContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       markdownRemark(fields: { slug: { eq: "/our-story/" } }) {
@@ -17,7 +17,13 @@ const OurStoryContainer = ({ title, text }) => {
     }
   `)
   return (
-    <Grid justifyContent='center' width='100%' my={['8', '20']} px='2'>
+    <Grid
+      justifyContent='center'
+      width='100%'
+      my={['8', '20']}
+      px='2'
+      {...containerProps}
+    >
       <Grid
         width='100%'
         maxWidth='1000px'

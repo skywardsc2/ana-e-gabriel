@@ -6,9 +6,7 @@ import React from 'react'
 import CardComponent from '../../components/card/card.component'
 import GiftCardComponent from '../../components/gift-card/gift-card.component'
 
-// import watercolorSplash from '../../img/splashes/Bem-vindos.png'
-
-const GiftsContainer = () => {
+const GiftsContainer = ({ containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       container: markdownRemark(fields: { slug: { eq: "/gifts/" } }) {
@@ -98,6 +96,7 @@ const GiftsContainer = () => {
       align='center'
       width='100%'
       paddingBottom={{ base: '0', md: '16', lg: '32' }}
+      {...containerProps}
     >
       <Grid
         pos='relative'

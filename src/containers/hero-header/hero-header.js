@@ -2,9 +2,15 @@ import { Flex, Grid, Heading } from '@chakra-ui/react'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const HeroHeaderContainer = ({ title }) => {
+const HeroHeaderContainer = ({ containerProps }) => {
   return (
-    <Flex justify='center' align='center' width='100%' marginTop={'10'}>
+    <Flex
+      justify='center'
+      align='center'
+      width='100%'
+      marginTop={'10'}
+      {...containerProps}
+    >
       <Grid
         pos='relative'
         justifyContent='center'
@@ -38,7 +44,7 @@ const HeroHeaderContainer = ({ title }) => {
           color='yellow.50'
           zIndex='5'
         >
-          {title}
+          {'Ana & Gabriel'}
         </Heading>
       </Grid>
     </Flex>

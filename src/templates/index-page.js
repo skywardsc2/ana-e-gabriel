@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Flex } from '@chakra-ui/react'
 import { graphql } from 'gatsby'
@@ -25,36 +25,36 @@ const IndexPageTemplate = ({
   galleryContainerContent,
   confirmationContainerContent
 }) => {
-  const topBarMenuItems = [
-    {
-      containerId: 'home',
+  const topBarMenuItems = {
+    'hero-header': {
+      elementRef: useRef(null),
       text: 'Home'
     },
-    {
-      containerId: 'home',
+    'our-story': {
+      elementRef: useRef(null),
       text: 'Nossa História'
     },
-    {
-      containerId: 'home',
+    address: {
+      elementRef: useRef(null),
       text: 'Endereço'
     },
-    {
-      containerId: 'home',
+    information: {
+      elementRef: useRef(null),
       text: 'Informações e Dicas'
     },
-    {
-      containerId: 'home',
+    gifts: {
+      elementRef: useRef(null),
       text: 'Presentes'
     },
-    {
-      containerId: 'home',
+    'photo-gallery': {
+      elementRef: useRef(null),
       text: 'Fotos'
     },
-    {
-      containerId: 'home',
+    confirmation: {
+      elementRef: useRef(null),
       text: 'Presença'
     }
-  ]
+  }
   return (
     <>
       <Helmet>
@@ -68,24 +68,29 @@ const IndexPageTemplate = ({
         paddingTop='4'
         overflow='hidden'
       >
-        <HeroHeaderContainer title={heading}></HeroHeaderContainer>
+        <HeroHeaderContainer
+          containerProps={{ ref: topBarMenuItems['hero-header'].elementRef }}
+        ></HeroHeaderContainer>
         <DateCountdownContainer></DateCountdownContainer>
-        <WelcomeContainer
-          title={welcomeContainerContent.heading}
-          text={welcomeContainerContent.text}
-        ></WelcomeContainer>
+        <WelcomeContainer></WelcomeContainer>
         <OurStoryContainer
-          title={ourStoryContainerContent.heading}
-          text={ourStoryContainerContent.text}
+          containerProps={{ ref: topBarMenuItems['our-story'].elementRef }}
         ></OurStoryContainer>
         <AddressContainer
-          title={addressContainerContent.heading}
-          text={addressContainerContent.text}
+          containerProps={{ ref: topBarMenuItems['address'].elementRef }}
         ></AddressContainer>
-        <InformationContainer></InformationContainer>
-        <GiftsContainer></GiftsContainer>
-        <PhotoGalleryContainer></PhotoGalleryContainer>
-        <ConfirmationContainer></ConfirmationContainer>
+        <InformationContainer
+          containerProps={{ ref: topBarMenuItems['information'].elementRef }}
+        ></InformationContainer>
+        <GiftsContainer
+          containerProps={{ ref: topBarMenuItems['gifts'].elementRef }}
+        ></GiftsContainer>
+        <PhotoGalleryContainer
+          containerProps={{ ref: topBarMenuItems['photo-gallery'].elementRef }}
+        ></PhotoGalleryContainer>
+        <ConfirmationContainer
+          containerProps={{ ref: topBarMenuItems['confirmation'].elementRef }}
+        ></ConfirmationContainer>
         <FooterContainer></FooterContainer>
       </Flex>
     </>
