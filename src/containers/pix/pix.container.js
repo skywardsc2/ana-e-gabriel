@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 import PixPopUpComponent from '../../components/pix-pop-up/pix-pop-up.component'
 

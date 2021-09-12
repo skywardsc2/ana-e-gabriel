@@ -40,7 +40,7 @@ const InformationCardComponent = ({ imageData, title, textHTML, ...props }) => {
               style={{ width: '100%', height: '100%' }}
             />
           </Box>
-          <Text fontSize='xl' width='100%' textAlign='center'>
+          <Text fontSize='xl' width='100%' fontWeight='bold' textAlign='center'>
             {title}
           </Text>
           <Text

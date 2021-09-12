@@ -32,7 +32,9 @@ const WelcomeContainer = () => {
         </Heading>
         <Text
           width='100%'
-          px='8'
+          maxWidth='700px'
+          textAlign='center'
+          px={{ base: '8', md: '16', lg: '0' }}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         ></Text>
       </Grid>

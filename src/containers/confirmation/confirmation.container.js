@@ -41,7 +41,7 @@ const ConfirmationContainer = ({ containerProps }) => {
     >
       <Box
         pos='absolute'
-        bottom='10%'
+        bottom='0'
         right={{ base: '-300px', md: '-150px', lg: '0' }}
         transform={{ base: 'none', lg: 'translate(-20%, 0)' }}
         height={{ base: '300px', lg: '400px ' }}

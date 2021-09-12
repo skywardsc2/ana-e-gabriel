@@ -28,6 +28,8 @@ const TopbarContainer = ({ menuItems }) => {
       pos='fixed'
       top='0'
       zIndex='10'
+      borderBottom={isMenuVisible && '1px solid'}
+      borderColor={isMenuVisible && 'secondary'}
     >
       <Grid
         width='100%'
@@ -92,9 +94,9 @@ const TopbarContainer = ({ menuItems }) => {
           transform: 'translate(0, 100%)',
           alignSelf: 'flex-end',
           zIndex: '9',
-          borderColor: 'secondary',
           borderLeft: '1px solid',
-          borderBottom: '1px solid'
+          borderBottom: '1px solid',
+          borderColor: 'secondary'
         }}
       />
     </Flex>

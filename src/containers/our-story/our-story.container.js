@@ -63,6 +63,7 @@ const OurStoryContainer = ({ containerProps }) => {
             pos='absolute'
             top='50%'
             left='50%'
+            width='100%'
             transform='translate(-50%, -50%)'
             zIndex='-1'
           >
@@ -71,7 +72,7 @@ const OurStoryContainer = ({ containerProps }) => {
         </Box>
         <Text
           width='100%'
-          px={['8', '16', 'none']}
+          px={{ base: '8', md: '20', lg: '0' }}
           gridArea='text'
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         ></Text>
