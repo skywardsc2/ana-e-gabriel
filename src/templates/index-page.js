@@ -16,16 +16,7 @@ import ConfirmationContainer from '../containers/confirmation/confirmation.conta
 import FooterContainer from '../containers/footer/footer.container'
 import PixPopUpContainer from '../containers/pix/pix.container'
 
-const IndexPageTemplate = ({
-  heading,
-  welcomeContainerContent,
-  ourStoryContainerContent,
-  addressContainerContent,
-  informationContainerContent,
-  giftsContainerContent,
-  galleryContainerContent,
-  confirmationContainerContent
-}) => {
+const IndexPageTemplate = ({ heading }) => {
   const topBarMenuItems = {
     'hero-header': {
       elementRef: useRef(null),
@@ -130,64 +121,13 @@ const IndexPageTemplate = ({
 }
 
 IndexPageTemplate.propTypes = {
-  heading: PropTypes.string,
-  welcomeContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    text: PropTypes.string
-  }),
-  ourStoryContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    text: PropTypes.string
-  }),
-  addressContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    text: PropTypes.string
-  }),
-  informationContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    text: PropTypes.string
-  }),
-  giftsContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    categories: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        cards: PropTypes.arrayOf(
-          PropTypes.shape({
-            title: PropTypes.string,
-            price: PropTypes.number
-          })
-        )
-      })
-    )
-  }),
-  galleryContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    photos: PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-    )
-  }),
-  confirmationContainerContent: PropTypes.shape({
-    heading: PropTypes.string,
-    text: PropTypes.string
-  })
+  heading: PropTypes.string
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
-  return (
-    <IndexPageTemplate
-      heading={frontmatter.heading}
-      welcomeContainerContent={frontmatter.welcomeContainerContent}
-      ourStoryContainerContent={frontmatter.ourStoryContainerContent}
-      addressContainerContent={frontmatter.addressContainerContent}
-      informationContainerContent={frontmatter.informationContainerContent}
-      giftsContainerContent={frontmatter.giftsContainerContent}
-      galleryContainerContent={frontmatter.galleryContainerContent}
-      confirmationContainerContent={frontmatter.confirmationContainerContent}
-    />
-  )
+  return <IndexPageTemplate heading={frontmatter.heading} />
 }
 
 IndexPage.propTypes = {
@@ -206,42 +146,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         heading
-        welcomeContainerContent {
-          heading
-          text
-        }
-        ourStoryContainerContent {
-          heading
-          text
-        }
-        addressContainerContent {
-          heading
-          text
-        }
-        informationContainerContent {
-          heading
-          cards {
-            title
-            text
-          }
-        }
-        giftsContainerContent {
-          heading
-          categories {
-            title
-            cards {
-              title
-              price
-            }
-          }
-        }
-        galleryContainerContent {
-          heading
-        }
-        confirmationContainerContent {
-          heading
-          text
-        }
       }
     }
   }
