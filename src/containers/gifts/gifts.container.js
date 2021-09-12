@@ -12,7 +12,7 @@ const ScrollElement = Scroll.ScrollElement
 
 const ScrollFlex = ScrollElement(Flex)
 
-const GiftsContainer = ({ containerProps }) => {
+const GiftsContainer = ({ onComprarClick, containerProps }) => {
   const data = useStaticQuery(graphql`
     {
       container: markdownRemark(fields: { slug: { eq: "/gifts/" } }) {
@@ -21,6 +21,12 @@ const GiftsContainer = ({ containerProps }) => {
         }
         frontmatter {
           title
+          version
+          key
+          name
+          city
+          transactionId
+          cep
         }
       }
       cards: allMarkdownRemark(
@@ -47,9 +53,7 @@ const GiftsContainer = ({ containerProps }) => {
     }
   `)
 
-  const createPix = (price) => {
-    console.log(`Criar pix de ${price}`)
-  }
+  const { title, ...pixData } = data.container.frontmatter
 
   const cardRows = []
   const maxCardsPerRow = 5
@@ -66,7 +70,9 @@ const GiftsContainer = ({ containerProps }) => {
           imageData={card.frontmatter.image}
           title={card.frontmatter.title}
           price={card.frontmatter.price}
-          handleButtonClick={() => createPix(card.frontmatter.price)}
+          handleButtonClick={() =>
+            onComprarClick({ ...pixData, value: card.frontmatter.price })
+          }
         />
       )
     })
@@ -98,6 +104,7 @@ const GiftsContainer = ({ containerProps }) => {
 
   return (
     <ScrollFlex
+      pos='relative'
       justify='center'
       align='center'
       width='100%'
@@ -145,7 +152,7 @@ const GiftsContainer = ({ containerProps }) => {
           color='yellow.50'
           zIndex='2'
         >
-          {data.container.frontmatter.title}
+          {title}
         </Heading>
         <Grid
           pos={{ base: 'relative', lg: 'absolute' }}
@@ -170,7 +177,7 @@ const GiftsContainer = ({ containerProps }) => {
             width='100%'
             color='yellow.50'
           >
-            {data.container.frontmatter.title}
+            {title}
           </Heading>
           <CardComponent
             width='100%'

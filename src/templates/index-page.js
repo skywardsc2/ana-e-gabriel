@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Flex } from '@chakra-ui/react'
 import { graphql } from 'gatsby'
@@ -14,6 +14,7 @@ import GiftsContainer from '../containers/gifts/gifts.container'
 import PhotoGalleryContainer from '../containers/photo-gallery/photo-gallery.container'
 import ConfirmationContainer from '../containers/confirmation/confirmation.container'
 import FooterContainer from '../containers/footer/footer.container'
+import PixPopUpContainer from '../containers/pix/pix.container'
 
 const IndexPageTemplate = ({
   heading,
@@ -55,12 +56,42 @@ const IndexPageTemplate = ({
       text: 'Presença'
     }
   }
+
+  const [pixPopUpState, setPixPopUpState] = useState({
+    visible: false,
+    pixData: null
+  })
+
+  const setPageScroll = (value) => {
+    document.documentElement.style.overflowY = value
+  }
+
+  const createPix = (payload) => {
+    setPageScroll('hidden')
+    setPixPopUpState({
+      visible: true,
+      pixData: payload
+    })
+  }
+
+  const closePixPopUpHandler = () => {
+    const currentState = pixPopUpState
+    setPageScroll('scroll')
+    setPixPopUpState({ ...currentState, visible: false })
+  }
+
   return (
     <>
       <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
       </Helmet>
       <TopbarContainer menuItems={topBarMenuItems}></TopbarContainer>
+      {pixPopUpState.visible && (
+        <PixPopUpContainer
+          pixData={pixPopUpState.pixData}
+          closeHandler={closePixPopUpHandler}
+        />
+      )}
       <Flex
         justify={'center'}
         width='100%'
@@ -82,7 +113,10 @@ const IndexPageTemplate = ({
         <InformationContainer
           containerProps={{ name: 'information' }}
         ></InformationContainer>
-        <GiftsContainer containerProps={{ name: 'gifts' }}></GiftsContainer>
+        <GiftsContainer
+          containerProps={{ name: 'gifts' }}
+          onComprarClick={createPix}
+        ></GiftsContainer>
         <PhotoGalleryContainer
           containerProps={{ name: 'photo-gallery' }}
         ></PhotoGalleryContainer>
