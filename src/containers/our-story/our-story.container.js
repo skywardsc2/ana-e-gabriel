@@ -71,6 +71,7 @@ const OurStoryContainer = ({ containerProps }) => {
           </Box>
         </Box>
         <Text
+          as='div'
           width='100%'
           px={{ base: '8', md: '20', lg: '0' }}
           gridArea='text'

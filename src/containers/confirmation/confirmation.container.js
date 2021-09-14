@@ -88,6 +88,7 @@ const ConfirmationContainer = ({ containerProps }) => {
           {data.container.frontmatter.title}
         </Heading>
         <Text
+          as='div'
           textAlign='center'
           dangerouslySetInnerHTML={{ __html: data.container.html }}
         ></Text>

@@ -1,13 +1,13 @@
 ---
 title: Fotos
 photos:
-  - /img/0.jpg
-  - /img/1.jpg
-  - /img/3.jpg
-  - /img/4.jpg
-  - /img/5.jpg
-  - /img/6.jpg
-  - /img/7.jpg
-  - /img/8.jpg
-  - /img/9.jpg
+  - /img/photo0.jpg
+  - /img/photo1.jpg
+  - /img/photo3.jpg
+  - /img/photo4.jpg
+  - /img/photo5.jpg
+  - /img/photo6.jpg
+  - /img/photo7.jpg
+  - /img/photo8.jpg
+  - /img/photo9.jpg
 ---

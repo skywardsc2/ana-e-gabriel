@@ -44,6 +44,7 @@ const InformationCardComponent = ({ imageData, title, textHTML, ...props }) => {
             {title}
           </Text>
           <Text
+            as='div'
             width='100%'
             dangerouslySetInnerHTML={{ __html: textHTML }}
           ></Text>

@@ -141,12 +141,12 @@ IndexPage.propTypes = {
 // export default IndexPage
 export default IndexPageTemplate
 
-export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        heading
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query IndexPageTemplate {
+//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+//       frontmatter {
+//         heading
+//       }
+//     }
+//   }
+// `
