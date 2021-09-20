@@ -77,7 +77,7 @@ const AddressContainer = ({ containerProps }) => {
           transformOrigin={'center'}
         >
           <StaticImage
-            src={'../../img/photos/watercolor-casarao-photo.png'}
+            src={'../../img/photos/watercolor-casarao2.png'}
             alt=''
             style={{
               width: '100%',

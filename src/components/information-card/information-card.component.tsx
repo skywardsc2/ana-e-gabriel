@@ -46,6 +46,7 @@ const InformationCardComponent = ({ imageData, title, textHTML, ...props }) => {
           <Text
             as='div'
             width='100%'
+            minHeight={{ base: '0', lg: '280px' }}
             dangerouslySetInnerHTML={{ __html: textHTML }}
           ></Text>
         </Grid>

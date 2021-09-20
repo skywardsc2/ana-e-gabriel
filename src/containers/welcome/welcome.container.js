@@ -31,6 +31,7 @@ const WelcomeContainer = () => {
           {data.markdownRemark.frontmatter.title}
         </Heading>
         <Text
+          as='div'
           width='100%'
           maxWidth='700px'
           textAlign='center'

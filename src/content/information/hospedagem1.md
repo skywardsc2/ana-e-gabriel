@@ -1,6 +1,7 @@
 ---
 title: Hospedagem (Parte 1)
 image: /img/quarto-hotel.jpg
+tag: hospedagem
 ---
 
 Perto do local do casamento não há opções interessantes de hospedagem, portanto recomendamos que os convidados se hospedem nos locais abaixo, que ficam a ~**45 a 55min** do local.

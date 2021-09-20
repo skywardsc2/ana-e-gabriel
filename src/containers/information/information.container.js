@@ -35,6 +35,7 @@ const InformationContainer = ({ containerProps }) => {
               }
             }
             title
+            tag
           }
           fields {
             slug
@@ -50,6 +51,8 @@ const InformationContainer = ({ containerProps }) => {
       .toString()
       .localeCompare(b.frontmatter.title.toString(), 'en', { numeric: true })
   )
+
+  const tags = ['hospedagem', 'salvador']
 
   return (
     <ScrollGrid
@@ -112,32 +115,46 @@ const InformationContainer = ({ containerProps }) => {
           {data.container.frontmatter.title}
         </Heading>
         <Grid
-          autoFlow={{ base: 'column', lg: 'row' }}
-          autoColumns={{
-            base: 'minmax(280px, 1fr)',
-            md: 'minmax(450px, 1fr)',
-            lg: '800px'
-          }}
-          alignItems='flex-start'
           width='100%'
-          gap='2'
-          marginLeft={{ base: '2', md: '0' }}
-          overflowX='auto'
-          p={{ base: '4', lg: '10' }}
-          css={{ '&::-webkit-scrollbar': { display: 'none' } }}
-          pos='relative'
+          gap='4'
+          justifyContent='center'
+          alignItems='flex-start'
         >
-          {sortedCards.map((card) => {
+          {tags.map((tag) => {
             return (
-              <InformationCardComponent
-                key={card.fields.slug}
-                title={card.frontmatter.title}
-                textHTML={card.html}
-                imageData={
-                  card.frontmatter.image.childImageSharp.gatsbyImageData
-                }
-                height='250px'
-              />
+              <Grid
+                autoFlow={{ base: 'column', lg: 'row' }}
+                autoColumns={{
+                  base: 'minmax(280px, 1fr)',
+                  md: 'minmax(450px, 1fr)',
+                  lg: '800px'
+                }}
+                alignItems='flex-start'
+                width='100%'
+                gap='2'
+                marginLeft={{ base: '2', md: '0' }}
+                overflowX='auto'
+                p={{ base: '4', lg: '10' }}
+                css={{ '&::-webkit-scrollbar': { display: 'none' } }}
+                pos='relative'
+              >
+                {sortedCards
+                  .filter((card) => card.frontmatter.tag === tag)
+                  .map((card) => {
+                    // console.log(card.tag)
+                    return (
+                      <InformationCardComponent
+                        key={card.fields.slug}
+                        title={card.frontmatter.title}
+                        textHTML={card.html}
+                        imageData={
+                          card.frontmatter.image.childImageSharp.gatsbyImageData
+                        }
+                        height='250px'
+                      />
+                    )
+                  })}
+              </Grid>
             )
           })}
         </Grid>

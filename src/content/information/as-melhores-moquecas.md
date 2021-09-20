@@ -1,6 +1,7 @@
 ---
 title: As Melhores Moquecas 🥘
 image: /img/moqueca.jpg
+tag: salvador
 ---
 
 - **[@restaurantedonana (Brotas, Villas do Atlântico e Praia do Forte)](https://www.instagram.com/restaurantedonana/)**

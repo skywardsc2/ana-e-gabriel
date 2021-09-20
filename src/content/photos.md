@@ -9,5 +9,5 @@ photos:
   - /img/photo6.jpg
   - /img/photo7.jpg
   - /img/photo8.jpg
-  - /img/photo9.jpg
+  - /img/photo9.jpeg
 ---

@@ -1,6 +1,7 @@
 ---
 title: Onde comer
 image: /img/almoco.jpg
+tag: salvador
 ---
 
 - **[@restauranteamado](https://www.instagram.com/restauranteamado/)**
@@ -14,3 +15,4 @@ image: /img/almoco.jpg
 - **[@vini.figueira.gastronomia](https://www.instagram.com/vini.figueira.gastronomia/)**
 - **[@pepo.restaurante](https://www.instagram.com/pepo.restaurante/)**
 - **[@encantosdemare](https://www.instagram.com/encantosdemare/)**
+- **[@pokeriaoficial](https://instagram.com/pokeriaoficial?utm_medium=copy_link)**

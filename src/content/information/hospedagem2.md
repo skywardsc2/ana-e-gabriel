@@ -1,6 +1,7 @@
 ---
 title: Hospedagem (Parte 2)
 image: /img/quarto-hotel2.jpg
+tag: hospedagem
 ---
 
 ## **Hospedagens para quem quer uma região mais tranquila (com foco maior em ficar na praia):**

@@ -2,12 +2,18 @@
 title: Nossa História
 ---
 
-E, de repente, a campanhia do novo apartamento de Ana Carolina tocou, naquele dia 21 de junho de 2018, dia em que ela recebia seus amigos para o seu “open house” de festa junina: era Gabriel, de penetra, a convite de amigos em comum, trazendo em uma mão uma caixa de cerveja e na outra um conjunto de xícaras de café para presentear Ana (não podia chegar de penetra e mãos abanando, né?).
+De repente tocou a campainha do novo apartamento de Ana Carolina, naquele 21 de junho de 2018, quando ela recebia amigos para um “open house junino”. Gabriel chegou meio sem jeito, meio de penetra, convidado por amigos comuns. Trouxe uma caixa de cerveja e um conjunto de xicaras de café para presentear a moradora. “Que linda”, pensou ele. “Que gentil”, pensou ela.
 <br>
 <br>
 
-E foi assim, com vinho quente, vodka com energético, Alceu tocando ao fundo, e uma carteira “esquecida” naquela festa junina, que começou essa história de amor e risadas.
+A noite correu ao som de Alceu Valença , regada a vinho quente, vodka e energético.
+A carteira do Gabriel acabou esquecida no apê... Quem acredita nisso?
+Estava garantido mais um encontro e, a partir dele, começou essa história de amor.
 <br>
 <br>
 
-Anos depois, após reunirem o jogo de jantar que havia sido separado naquele 21 de junho (não é que as xícaras presenteadas eram parte do próprio jogo que Gabriel resolveu aproveitar?), Ana, Gabriel e Zion formam uma família que é rodeada de amor, e seguem construindo e compartilhando momentos de alegria e companheirismo.
+Cresceu a vontade de estar junto, perdeu sentido manter 2 apartamentos e eles descobriram, vejam só, que as xícaras de café dela combinavam perfeitamente com o jogo de jantar dele - Era um sinal dos céus!
+<br>
+<br>
+
+De lá pra cá, abriram espaço para um pote de ração ao receberem o Zion em suas vidas e continuam caminhando, construindo juntos e dividindo a vida com alegria e companheirismo.
