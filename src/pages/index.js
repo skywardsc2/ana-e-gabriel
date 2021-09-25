@@ -9,6 +9,7 @@ import WelcomeContainer from '../containers/welcome/welcome.container'
 import { Helmet } from 'react-helmet'
 import OurStoryContainer from '../containers/our-story/our-story.container'
 import AddressContainer from '../containers/address/address.container'
+import OutfitContainer from '../containers/outfit/outfit.container'
 import InformationContainer from '../containers/information/information.container'
 import GiftsContainer from '../containers/gifts/gifts.container'
 import PhotoGalleryContainer from '../containers/photo-gallery/photo-gallery.container'
@@ -101,6 +102,7 @@ const IndexPageTemplate = ({ heading }) => {
         <AddressContainer
           containerProps={{ name: 'address' }}
         ></AddressContainer>
+        <OutfitContainer></OutfitContainer>
         <InformationContainer
           containerProps={{ name: 'information' }}
         ></InformationContainer>
