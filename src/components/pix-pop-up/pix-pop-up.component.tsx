@@ -50,7 +50,10 @@ const PixPopUpComponent = ({ pixData, closeHandler }) => {
           height='52'
         />
         <Text width='100%' textAlign='center'>
-          Valor: {`R$ ${pixData.value.toFixed(2).replace('.', ',')}`}
+          Valor:{' '}
+          {pixData.value
+            ? `R$ ${pixData.value.toFixed(2).replace('.', ',')}`
+            : `A definir`}
         </Text>
         <Text width='100%' textAlign='center'>
           Pix QRCode:
