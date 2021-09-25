@@ -2,7 +2,7 @@
 title: Trajes
 ---
 
-A cerimônia será às **12h de um dia de janeiro**, em **Salvador** ☀.
+A cerimônia será às **11h de um dia de janeiro**, em **Salvador** ☀.
 <br>
 <br>
 
