@@ -1,5 +1,5 @@
 import { Grid, Box, Heading } from '@chakra-ui/layout'
-import { Flex } from '@chakra-ui/react'
+import { Button, Flex, Text } from '@chakra-ui/react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
@@ -121,16 +121,19 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
         pos='relative'
         width='100%'
         maxWidth='1200px'
+        templateColumns={{ base: '100%' }}
         overflowX={{ base: 'hidden', lg: 'visible' }}
         justifyContent='center'
-        justifyItems='center'
+        justifyItems={{ base: 'center', lg: 'initial' }}
+        padding={{ base: '0', lg: '100px 0 0 100px' }}
       >
         <Flex
-          pos='relative'
+          pos={{ base: 'relative', lg: 'absolute' }}
           right={{ base: '90px', md: '0', lg: '0' }}
-          width={{ base: '800px', md: '1200px', lg: '100%' }}
-          height={{ base: '90vh' }}
-          minHeight={{ base: '900px' }}
+          width={{ base: '900px', md: '1200px', lg: '100%' }}
+          height={{ base: '80vh' }}
+          minHeight={{ base: '700px', lg: '900px' }}
+          justifySelf={{ base: 'center' }}
         >
           <StaticImage
             src='../../img/photos/watercolor-gifts.png'
@@ -143,8 +146,8 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
           />
         </Flex>
         <Heading
-          position='absolute'
-          top={{ base: '15%', md: '8%', lg: '0' }}
+          position={{ base: 'absolute', lg: 'relative' }}
+          top={{ base: '5%', lg: '0' }}
           textAlign='center'
           display={{ base: 'block', lg: 'none' }}
           as='h2'
@@ -161,12 +164,16 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
           {title}
         </Heading>
         <Grid
-          pos={{ base: 'relative', lg: 'absolute' }}
-          top={{ base: '-150px', lg: '150px' }}
-          left={{ base: '0', lg: '0' }}
+          pos={{ base: 'relative' }}
+          // top={{ base: '-150px', lg: '150px' }}
+          left={{ base: '0', lg: '10%' }}
+          top={{ base: '0', lg: '10%' }}
+          marginRight={{ base: '0', lg: '10%' }}
+          marginBottom={{ base: '0', lg: '10%' }}
           width={{ base: '100vw', lg: '50%' }}
-          maxHeight={{ base: '700px' }}
-          marginLeft={{ base: '0', lg: '10%' }}
+          // maxHeight={{ base: '700px' }}
+          // marginLeft={{ base: '0', lg: '10%' }}
+          // marginBottom={{ base: '0', lg: '150px' }}
           rowGap='2'
           zIndex='2'
           // paddingLeft={{ base: '0', lg: '20' }}
@@ -198,6 +205,29 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
               </Grid>
             </Grid>
           </CardComponent>
+        </Grid>
+        <Grid
+          width='100vw'
+          justifyItems='center'
+          justifySelf='center'
+          gap='4'
+          my={{ base: '20' }}
+          px={{ base: '4', md: '0' }}
+        >
+          <Text
+            width='100%'
+            textAlign='center'
+            fontSize={{ base: 'xl', lg: '2xl' }}
+            fontWeight={{ base: 'normal' }}
+          >
+            Dê um presente que não está na lista!
+          </Text>
+          <Button
+            size='md'
+            onClick={() => onComprarClick({ ...pixData, value: null })}
+          >
+            Comprar
+          </Button>
         </Grid>
       </Grid>
     </ScrollFlex>
