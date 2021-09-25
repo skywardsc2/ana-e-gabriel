@@ -72,9 +72,10 @@ const AddressContainer = ({ containerProps }) => {
         <Box
           pos='relative'
           width={{ base: '100%' }}
-          height={{ base: '50vh', lg: '70vh' }}
+          height={{ base: '600px', lg: '70vh' }}
           transform={{ base: 'scale(180%)', md: 'none' }}
           transformOrigin={'center'}
+          my={{ base: '0', md: '0' }}
         >
           <StaticImage
             src={'../../img/photos/watercolor-casarao2.png'}
