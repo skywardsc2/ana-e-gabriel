@@ -3,11 +3,11 @@ const styles = {
     '*': {
       '::-webkit-scrollbar': {
         height: '2',
-        width: '1'
+        width: '2'
       },
-      '::-webkit-scrollbar-track': {
-        boxShadow: 'none'
-      },
+      // '::-webkit-scrollbar-track': {
+      //   boxShadow: 'none'
+      // },
       '::-webkit-scrollbar-thumb': {
         backgroundColor: 'primary',
         borderRadius: '20px'
