@@ -134,7 +134,11 @@ const PhotoGalleryContainer = ({ containerProps }) => {
         >
           {data.container.nodes[0].frontmatter.title}
         </Heading>
-        <Box width={{ base: '100%' }} px={{ base: '4', md: '8', lg: '0' }}>
+        <Box
+          width={{ base: '100%' }}
+          maxWidth={{ base: '600px' }}
+          px={{ base: '4', md: '8', lg: '0' }}
+        >
           <Gallery images={photos} colWidth={100 / 2} mdColWidth={100 / 2} />
         </Box>
       </Grid>
