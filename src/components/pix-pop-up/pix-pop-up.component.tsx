@@ -58,7 +58,13 @@ const PixPopUpComponent = ({ pixData, closeHandler }) => {
         <Text width='100%' textAlign='center'>
           Pix QRCode:
         </Text>
-        <Code width='100%' overflowWrap='anywhere' textAlign='center'>
+        <Code
+          width='100%'
+          wordWrap='break-word'
+          wordBreak='break-all'
+          overflowWrap='break-word'
+          textAlign='center'
+        >
           {qrCodePix.payload()}
         </Code>
       </Grid>
