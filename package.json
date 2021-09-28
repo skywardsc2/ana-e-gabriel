@@ -11,6 +11,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@fontsource/josefin-slab": "^4.5.0",
+    "axios": "^0.21.4",
     "buffer": "^6.0.3",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.13.0",
@@ -37,9 +38,12 @@
     "qrcode-pix": "3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.0.0",
+    "react-hook-form": "^7.16.0",
     "react-photo-gallery": "^8.0.0",
     "react-scroll": "^1.8.4",
+    "sparkpost": "^2.1.4",
     "uuid": "^8.3.2"
   },
   "keywords": [

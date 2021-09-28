@@ -10,12 +10,15 @@ module.exports = {
     title: 'Casamento Ana e Gabriel',
     description:
       'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!',
+    url: 'https://casamentoanaegabriel.com.br/',
     ogTitle: 'Casamento Ana e Gabriel',
     ogDescription:
       'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
     netlifyCmsPaths,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -32,13 +35,13 @@ module.exports = {
         name: 'pages'
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/img`,
+    //     name: 'images'
+    //   }
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -55,7 +58,16 @@ module.exports = {
       }
     },
     '@chakra-ui/gatsby-plugin',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`],
+          placeholder: `blurred`,
+          quality: 50
+        }
+      }
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -83,9 +95,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

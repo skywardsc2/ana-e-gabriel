@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Flex } from '@chakra-ui/react'
-import { graphql } from 'gatsby'
 import HeroHeaderContainer from '../containers/hero-header/hero-header'
 import TopbarContainer from '../containers/topbar/topbar'
 import DateCountdownContainer from '../containers/date-countdown/date-countdown.container'
@@ -16,6 +15,8 @@ import PhotoGalleryContainer from '../containers/photo-gallery/photo-gallery.con
 import ConfirmationContainer from '../containers/confirmation/confirmation.container'
 import FooterContainer from '../containers/footer/footer.container'
 import PixPopUpContainer from '../containers/pix/pix.container'
+import SendMessageContainer from '../containers/send-message/send-message.container'
+import SeoComponent from '../components/seo/seo.component'
 
 const IndexPageTemplate = ({ heading }) => {
   const topBarMenuItems = {
@@ -77,6 +78,7 @@ const IndexPageTemplate = ({ heading }) => {
       <Helmet>
         <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script>
       </Helmet>
+      <SeoComponent />
       <TopbarContainer menuItems={topBarMenuItems}></TopbarContainer>
       {pixPopUpState.visible && (
         <PixPopUpContainer
@@ -116,6 +118,9 @@ const IndexPageTemplate = ({ heading }) => {
         <ConfirmationContainer
           containerProps={{ name: 'confirmation' }}
         ></ConfirmationContainer>
+        <SendMessageContainer
+          containerProps={{ name: 'send-message' }}
+        ></SendMessageContainer>
         <FooterContainer></FooterContainer>
       </Flex>
     </>
