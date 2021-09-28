@@ -123,6 +123,7 @@ const InformationContainer = ({ containerProps }) => {
           {tags.map((tag) => {
             return (
               <Grid
+                key={tag}
                 autoFlow={{ base: 'column', lg: 'row' }}
                 autoColumns={{
                   base: 'minmax(280px, 1fr)',
