@@ -145,7 +145,7 @@ const SendMessageContainer = ({ containerProps }) => {
             zIndex='-1'
           >
             <StaticImage
-              src={'../../img/splashes/Endereco.png'}
+              src={'../../img/splashes/Message.png'}
               alt=''
               style={{ width: '1000px' }}
             />

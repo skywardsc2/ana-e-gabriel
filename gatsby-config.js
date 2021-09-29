@@ -63,7 +63,6 @@ module.exports = {
       options: {
         defaults: {
           formats: [`auto`],
-          placeholder: `blurred`,
           quality: 50
         }
       }

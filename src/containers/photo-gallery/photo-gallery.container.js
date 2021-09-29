@@ -93,7 +93,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
         height={{ base: '400px', lg: '600px ' }}
       >
         <StaticImage
-          src={'../../img/splashes/InfoLeft.png'}
+          src={'../../img/splashes/PhotoLeft.png'}
           alt=''
           style={{ width: '100%', height: '100%' }}
           imgStyle={{ objectFit: 'contain' }}
@@ -108,7 +108,7 @@ const PhotoGalleryContainer = ({ containerProps }) => {
         height={{ base: '400px', lg: '600px ' }}
       >
         <StaticImage
-          src={'../../img/splashes/InfoRight.png'}
+          src={'../../img/splashes/PhotoRight.png'}
           alt=''
           style={{ width: '100%', height: '100%' }}
           imgStyle={{ objectFit: 'contain' }}

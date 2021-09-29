@@ -25,9 +25,7 @@ const ConfirmationContainer = ({ containerProps }) => {
     }
   `)
 
-  const handleConfirmationClick = () => {
-    console.log('Clicked')
-  }
+  const handleConfirmationClick = () => {}
 
   return (
     <ScrollGrid
@@ -92,7 +90,13 @@ const ConfirmationContainer = ({ containerProps }) => {
           textAlign='center'
           dangerouslySetInnerHTML={{ __html: data.container.html }}
         ></Text>
-        <Button size={'lg'} onClick={() => handleConfirmationClick()}>
+        <Button
+          as='a'
+          href='https://docs.google.com/forms/d/e/1FAIpQLSdUWtLkXhzyZA_pNpQl8hxLnqW5OuaVphQxtg0wqL3nhGP_Cg/viewform?usp=sf_link'
+          rel='noopener'
+          size={'lg'}
+          onClick={() => handleConfirmationClick()}
+        >
           Confirmar Presença
         </Button>
       </Grid>

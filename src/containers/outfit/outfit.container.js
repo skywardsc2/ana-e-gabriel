@@ -18,7 +18,7 @@ const OutfitContainer = () => {
     <Grid justifyContent='center' width='100%' marginBottom={['8', '20']}>
       <Grid justifyItems='center' width='100%' maxWidth='1000px' rowGap='4'>
         <Box pos='relative' top='25%'>
-          <StaticImage src={'../../img/splashes/Bem-Vindos.png'} alt='' />
+          <StaticImage src={'../../img/splashes/Trajes.png'} alt='' />
         </Box>
         <Heading
           as='h2'
