@@ -10,10 +10,11 @@ module.exports = {
     title: 'Casamento Ana e Gabriel',
     description:
       'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!',
-    url: 'https://casamentoanaegabriel.com.br/',
+    url: 'https://casamentoanaegabriel.com.br',
     ogTitle: 'Casamento Ana e Gabriel',
     ogDescription:
-      'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!'
+      'Esse é o convite do nosso casamento, ficamos muito felizes em compartilhar esse momento com você!',
+    image: '/ogImage.jpg'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
