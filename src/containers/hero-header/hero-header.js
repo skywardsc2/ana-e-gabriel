@@ -26,6 +26,7 @@ const HeroHeaderContainer = ({ containerProps }) => {
           pos='relative'
           width={['800px', '800px', '1200px', '100%']}
           height={['50vh', '50vh', '90vh', '90vh']}
+          minH={{ base: '500px' }}
           transform={['none', 'none']}
         >
           <StaticImage
