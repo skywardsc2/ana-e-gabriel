@@ -47,6 +47,10 @@ const IndexPageTemplate = ({ heading }) => {
     confirmation: {
       elementRef: useRef(null),
       text: 'Presença'
+    },
+    'send-message': {
+      elementRef: useRef(null),
+      text: 'Mensagem aos Noivos'
     }
   }
 

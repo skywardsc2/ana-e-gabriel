@@ -23,7 +23,7 @@ const TopbarContainer = ({ menuItems }) => {
       direction='column'
       width='100%'
       height={['16']}
-      py='2'
+      // py='2'
       backgroundColor='white'
       pos='fixed'
       top='0'
@@ -33,10 +33,11 @@ const TopbarContainer = ({ menuItems }) => {
     >
       <Grid
         width='100%'
+        height='100%'
         maxWidth='1200px'
         px={['4', '12']}
         justifyContent='space-between'
-        alignItems='center'
+        alignItems={{ base: 'center', lg: 'stretch' }}
         autoFlow='column'
       >
         <Logo width='80px' height='95%' />
