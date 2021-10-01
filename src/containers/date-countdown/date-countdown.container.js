@@ -12,11 +12,18 @@ const DateCountdownContainer = () => {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
+        seconds: Math.floor((difference / 1000) % 60),
+        timeInSeconds: Math.floor(difference)
       }
     }
 
     return timeLeft
+  }
+
+  const getCountdown = (timeLeft) => {
+    return timeLeft.timeInSeconds > 0
+      ? `${timeLeft.days} dias, ${timeLeft.hours} horas, ${timeLeft.minutes} minutos, ${timeLeft.seconds} segundos`
+      : `Chegou o dia!`
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
@@ -63,12 +70,13 @@ const DateCountdownContainer = () => {
       <Heading
         as='h2'
         width='100vw'
+        px='4'
         textAlign='center'
         fontFamily='Rawengulk'
         fontWeight='normal'
         color='primary'
       >
-        {`${timeLeft.days} dias, ${timeLeft.hours} horas, ${timeLeft.minutes} minutos, ${timeLeft.seconds} segundos`}
+        {getCountdown(timeLeft)}
       </Heading>
     </Grid>
   )
