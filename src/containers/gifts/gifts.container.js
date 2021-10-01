@@ -67,6 +67,12 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
     cardRows.push(sortedCards.slice(i, i + maxCardsPerRow))
   }
 
+  const getPixMessage = (product) => {
+    const maxLength = 62
+    // return 'x'.repeat(maxLength)
+    return product.substring(0, maxLength)
+  }
+
   const getCardRow = (cards) => {
     const c = []
     cards.forEach((card, index) => {
@@ -77,7 +83,11 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
           title={card.frontmatter.title}
           price={card.frontmatter.price}
           handleButtonClick={() =>
-            onComprarClick({ ...pixData, value: card.frontmatter.price })
+            onComprarClick({
+              ...pixData,
+              value: card.frontmatter.price,
+              message: getPixMessage(card.frontmatter.title)
+            })
           }
         />
       )
