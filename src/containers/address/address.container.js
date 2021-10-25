@@ -78,7 +78,7 @@ const AddressContainer = ({ containerProps }) => {
           my={{ base: '0', md: '0' }}
         >
           <StaticImage
-            src={'../../img/photos/watercolor-casarao2.png'}
+            src={'../../img/photos/carlotta.png'}
             alt=''
             style={{
               width: '100%',
@@ -98,7 +98,7 @@ const AddressContainer = ({ containerProps }) => {
           <Box width='100%'>
             <iframe
               title='Mapa do Local'
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.376895560173!2d-38.48649508517955!3d-12.818904490956184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716127f775ea43d%3A0xaf4123a1e1e549f5!2sCasar%C3%A3o%20do%20Alto!5e0!3m2!1spt-BR!2sbr!4v1631224523866!5m2!1spt-BR!2sbr'
+              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.791844444739!2d-38.31620178517831!3d-12.92109609088901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7163d81b7324f71%3A0x257897548f0b4bc2!2sCarlotta%20Eventos!5e0!3m2!1spt-BR!2sbr!4v1634940298056!5m2!1spt-BR!2sbr'
               width='100%'
               height='350px'
               style={{ border: 0 }}

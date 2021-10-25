@@ -1,14 +1,14 @@
 ---
 title: Endereço
-text: A cerimônia e a festa acontecerão no Casarão do Alto. O lugar é longe, mas juramos que a vista valerá a pena!
+text: A cerimônia e a festa acontecerão no Carlotta Eventos. O local é muito acessível de uber/táxi e possui várias opções de hospedagem próximas.
 ---
 
-## Casarão do Alto
+## Carlotta Eventos
 
 <br>
 
-R. do Corredor, 53 - São Tomé de Paripe, Salvador - BA, 40800-300.
+Rua Clóvis Bevilácqua, 16 - Praia do Flamengo, Salvador - BA, 41603-120
 <br>
 <br>
 
-**22 de janeiro, às 11:00.**
+**22 de janeiro, às 12:00.**

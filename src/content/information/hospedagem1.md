@@ -4,14 +4,7 @@ image: /img/quarto-hotel.jpg
 tag: hospedagem
 ---
 
-Perto do local do casamento não há opções interessantes de hospedagem, portanto recomendamos que os convidados se hospedem nos locais abaixo, que ficam a ~**45 a 55min** do local.
-<br>
-<br>
-Apesar de distante, **o acesso de Uber/Táxi é tranquilo**, tanto na ida quanto na volta da festa 😉.
-<br>
-<br>
-
-### **Hospedagens na região de mais fácil acesso aos pontos turísticos:**
+## **Hospedagens na região de mais fácil acesso aos pontos turísticos** (Apesar de um pouquinho mais distante, o acesso de Uber/Táxi é tranquilo, tanto na ida quanto na volta da festa 😉):
 
 - Hotel Ibis Rio Vermelho
 - Novotel Salvador Rio Vermelho
