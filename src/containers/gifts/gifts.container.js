@@ -68,7 +68,7 @@ const GiftsContainer = ({ onComprarClick, containerProps }) => {
   }
 
   const getPixMessage = (product) => {
-    const maxLength = 62
+    const maxLength = 30
     // return 'x'.repeat(maxLength)
     return product.substring(0, maxLength)
   }
