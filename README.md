@@ -1,6 +1,6 @@
 # Ana & Gabriel's Wedding Website
 
-<img src="./src/img/photos/watercolor-cover.png" height="400px" width="100%" style="object-fit: contain; object-position: center;" alt=""></img>
+<img src="./src/img/photos/watercolor-cover.png" width="100%" style="object-fit: contain; object-position: center;" alt=""></img>
 
 ## Introduction
 
